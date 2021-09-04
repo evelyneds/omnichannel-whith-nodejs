@@ -1,6 +1,6 @@
 # Omni Channel - OmniGirls - just wanna code!
 > 
-Desafio Final - Omni Channel
+Desafio Final Luiza<Code> - Omni Channel
 
 Uma das funcionalidades mais interessantes em um e-commerce é a Omni Channel. Ou seja, não há mais diferenças entre lojas físicas ou na web. O consumidor pode procurar
 o produto em uma loja física e comprar pela internet ou vice-versa.
