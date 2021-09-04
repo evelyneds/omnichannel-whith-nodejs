@@ -1,0 +1,18 @@
+{
+  "name": "omnigirls",
+  "version": "1.0.0",
+  "description": "Criação de um OMNIChannel - Luiza Code 3a Edição - DESAFIO FINAL",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "author": "Ana Maria, Evelyn Dias, Julia Minagawa, Keila Hadama, Pietra",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12",
+    "ts-node-dev": "^1.1.8"
+  }
+}
