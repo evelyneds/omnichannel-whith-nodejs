@@ -1,5 +1,18 @@
-# Nome do produto
-> Descrição curta sobre o que seu projeto faz.
+# Omni Channel - OmniGirls - just wanna code!
+> 
+Desafio Final - Omni Channel
+
+Uma das funcionalidades mais interessantes em um e-commerce é a Omni Channel. Ou seja, não há mais diferenças entre lojas físicas ou na web. O consumidor pode procurar
+o produto em uma loja física e comprar pela internet ou vice-versa.
+Basicamente, o cliente Omni Channel é aquele que utiliza de todos os canais simultaneamente, cruzando compras em ambientes físicos e online.
+
+
+## Objetivo deste projeto
+O objetivo é o desenvolvimento de um serviço HTTP resolvendo a funcionalidade de Omni Channel do cliente. Esse serviço atender os seguintes requisitos:
+- Adicionar um produto na lista da compra da cliente;
+- Remover um produto da lista da compra da cliente;
+- Consultar todos os produtos disponíveis;
+- Consultar a lista de compras da cliente;
 
 [![NPM Version][npm-image]][npm-url]
 [![Build Status][travis-image]][travis-url]
