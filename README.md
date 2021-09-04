@@ -88,3 +88,18 @@ Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 [travis-image]: https://img.shields.io/travis/dbader/node-datadog-metrics/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/dbader/node-datadog-metrics
 [wiki]: https://github.com/seunome/seuprojeto/wiki
+   
+   
+   
+   ### Autoras
+
+<table>
+<tr>
+ <td align="center"><a href="https://github.com/evelynsantos"><img src="https://avatars.githubusercontent.com/u/3731050?v=4" width="80px;"  title="Perfil de Evelyn Dias"/><br /><sub><b>Evelyn Dias Santos</b></sub></a><br /><a href="https://github.com/evelynsantos" title="Code">:computer: </a></td>
+   
+   
+ <td align="center"><a href="https://github.com/"><img src="" width="80px;"  title="Perfil de XPTO"/><br /><sub><b>XPTO </b></sub></a><br /><a href="https://github.com/" title="Code">:computer: </a></td>  
+</tr>
+</table>
+   
+   
