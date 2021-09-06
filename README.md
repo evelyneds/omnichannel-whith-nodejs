@@ -97,6 +97,8 @@ Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 <tr>
  <td align="center"><a href="https://github.com/evelynsantos"><img src="https://avatars.githubusercontent.com/u/3731050?v=4" width="80px;"  title="Perfil de Evelyn Dias"/><br /><sub><b>Evelyn Dias Santos</b></sub></a><br /><a href="https://github.com/evelynsantos" title="Code"></a></td>
    
+ <td align="center"><a href="https://github.com/JuliaMinagawa"><img src="https://avatars.githubusercontent.com/u/88911670?s=400&v=4" width="80px;"  title="Perfil de Julia Minagawa"/><br /><sub><b>Julia Minagawa</b></sub></a><br /><a href="https://github.com/JuliaMinagawa" title="Code"></a></td>
+
    
  <td align="center"><a href="https://github.com/"><img src="" width="80px;"  title="Perfil de XPTO"/><br /><sub><b>XPTO </b></sub></a><br /><a href="https://github.com/" title="Code"></a></td>  
 </tr>
