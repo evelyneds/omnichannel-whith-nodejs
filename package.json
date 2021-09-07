@@ -9,6 +9,8 @@
   "author": "Ana Maria, Evelyn Dias, Julia Minagawa, Keila Hadama, Pietra",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "pg": "^8.7.1",
     "pg-hstore": "^2.3.4",

@@ -1,8 +1,17 @@
 
-export default routes;
+import { Router } from 'express';
+import EmployeeController from './app/controller/EmployeeController';
 
+const routes = new Router();
+//routes.post('/employee', EmployeeController.store);
+//export default  routes;
 
+ 
+  routes.get('/', (req, res) => {  
+   res.json({ message: "Olá meninas! Boa noite" })    
+ }); 
 
-//Realizar a requisição e resposta
-//routes.get('/', (req, res) => {
-  //  res.json({message: "Aplicação inicial [1] ==> Hello LuWord!"})
+ routes.post('/', EmployeeController.store);
+ routes.get('/', EmployeeController.index);
+ //module.exports = routes;
+ export default  routes;
