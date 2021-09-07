@@ -11,7 +11,7 @@ const routes = new Router();
    res.json({ message: "Olá meninas! Boa noite" })    
  }); 
 
- routes.post('/', EmployeeController.store);
- routes.get('/', EmployeeController.index);
+ routes.post('/e', EmployeeController.store);
+ routes.get('/e', EmployeeController.index);
  //module.exports = routes;
  export default  routes;
