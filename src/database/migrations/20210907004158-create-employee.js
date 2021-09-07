@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('employee', {
+    return queryInterface.createTable('employees', {
       id: {
         type: Sequelize.INTEGER,//tipo
         allowNull: false, // permite valor vazio
@@ -32,7 +32,7 @@ module.exports = {
     })
   },
   down: queryInterface => {
-    return queryInterface.dropTable('employee');
+    return queryInterface.dropTable('employees');
   }
 };
 
