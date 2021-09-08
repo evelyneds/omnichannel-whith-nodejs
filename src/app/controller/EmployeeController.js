@@ -9,20 +9,14 @@ class EmployeeController {
 
     async index(req, res) {
         //TODO Criação de GET
-        /*const employee = await Employee.find({
-            user: req.employee,
-        })
-            .sort({ createdAt: "desc" })
-            .limit(20);
+        const employee = await Employee.findOne({ where : {
+                email: req.body.email,
+                password_hash: await Employee.passwordHash(req.body.password)
+             }
+        });
 
-        return res.json(employee);*/
+        return res.json(employee);
         
-        
-        const person = {
-            name: "Nome da Pessoa",
-            email: "teste@teste@.com"
-        }
-        return res.status(200).json(person);
     };
 
 
