@@ -97,7 +97,7 @@ Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 <tr>
  <td align="center"><a href="https://github.com/evelynsantos"><img src="https://avatars.githubusercontent.com/u/3731050?v=4" width="80px;"  title="Perfil de Evelyn Dias"/><br /><sub><b>Evelyn Dias Santos</b></sub></a><br /><a href="https://github.com/evelynsantos" title="Code"></a></td>
    
- <td align="center"><a href="https://github.com/JuliaMinagawa"><img src="https://avatars.githubusercontent.com/u/88911670?s=400&v=4" width="80px;"  title="Perfil de Julia Minagawa"/><br /><sub><b>Julia Minagawa</b></sub></a><br /><a href="https://github.com/JuliaMinagawa" title="Code"></a></td>
+ <td align="center"><a href="https://github.com/JuliaMinagawa"><img src="https://avatars.githubusercontent.com/u/88911670?s=400&u=a8384358bdd0b61ed60fc4dc088facf3cc084e53&v=4" width="80px;"  title="Perfil de Julia Minagawa"/><br /><sub><b>Julia Minagawa</b></sub></a><br /><a href="https://github.com/JuliaMinagawa" title="Code"></a></td>
 
 <td align="center"><a href="https://github.com/carvalhoanamaria"><img src="https://avatars.githubusercontent.com/u/33851180?v=4" width="80px;"  title="Perfil de Ana Maria Carvalho"/><br /><sub><b>Ana Maria Carvalho</b></sub></a><br /><a href="https://github.com/carvalhoanamaria" title="Code"></a></td>
 
@@ -108,7 +108,7 @@ Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 >>>>>>> main
 <td align="center"><a href="https://github.com/hadamakei"><img src="https://avatars.githubusercontent.com/u/88164568?v=4" width="80px;"  title="Perfil de Keila Hadama"/><br /><sub><b>Keila Hadama</b></sub></a><br /><a href="https://github.com/hadamakei" title="Code"></a></td>
    
- <td align="center"><a href="https://github.com/"><img src="" width="80px;"  title="Perfil de XPTO"/><br /><sub><b>XPTO </b></sub></a><br /><a href="https://github.com/" title="Code"></a></td>  
+ 
 </td>
 </table>
    
