@@ -2,25 +2,21 @@ import Customer from '../models/Customer';
 
 class CustomerController {
     async store(req, res) {
-      const {id, name, email} = await Customer.create(req.body);
-        //const { id, name, email } = await Customer.create(req.body);
-        return res.json({id, name, email });
+        const { id, name, email } = await Customer.create(req.body);
+        return res.json({ id, name, email });
     };
 
-    async index(req, res) {      
-        const person = {
-            name: "Nome da Pessoa",
-            email: "teste@teste@.com"
-        }
-        return res.status(200).json(person);
+    async index() {
+        const customer = await customer.findAll();
+        return res.status(200).json(customer);
     };
 
     async delete(req, res) {
-        return res.status(200).json({ message: 'isso ai psiti' });
+        return res.status(200).json({ message: 'Removido com sucesso.' });
     };
 
     async update(req, res) {
-        return res.status(200).json({ message: 'isso ai psiti' });
+        return res.status(200).json({ message: 'Atualizado com sucesso' });
     };
 }
 export default new CustomerController();

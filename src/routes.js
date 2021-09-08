@@ -11,11 +11,11 @@ const routes = new Router();
  }); 
 
  //Rotas Employee
- routes.post('/employees', EmployeeController.store);
- routes.get('/employees', EmployeeController.index);
+ routes.post('/create_employees', EmployeeController.store);
+ routes.get('/read_employees', EmployeeController.index);
 
  //Rotas Customer
- routes.get('/customers', CustomerController.index);
- routes.post('/customers', CustomerController.store);
+ routes.post('/create_customers', CustomerController.store);
+ routes.get('/read_customers', CustomerController.index);
 
  export default routes;
