@@ -8,6 +8,7 @@ class EmployeeController {
 
     async index(req, res) {
         const employee = await Employee.findAll();
+        //attributes: ['id', 'address']
         return res.status(200).json(employee);
     };
 

@@ -3,12 +3,16 @@ import Store from '../models/Store';
 class StoreController {
     async store(req, res) {
         const { id, company_name, address } = await Store.create(req.body);
-        return res.json({ id, company_name, address });
+        return res.json({ id, company_name, address });//message: 'Usuário cadastrado com sucesso',
     };
 
     async index(req, res) {
-        const store = await Store.findAll();
-        console.log(store);
+        //const store = 
+        
+        const store = await Store.findAll({
+            //attributes: ['id', 'address'] //Retorna campos específicos
+        });
+        //console.log(store);
         return res.status(200).json(store);
     };
 

@@ -5,7 +5,7 @@ class Store extends Model {
     static init(sequelize) {
         super.init({
             company_name: Sequelize.STRING,
-            adress: Sequelize.STRING,
+            address: Sequelize.STRING,
         },
             {
                 sequelize,
