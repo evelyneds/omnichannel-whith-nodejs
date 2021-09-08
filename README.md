@@ -101,10 +101,15 @@ Distribuído sob a licença XYZ. Veja `LICENSE` para mais informações.
 
 <td align="center"><a href="https://github.com/carvalhoanamaria"><img src="https://avatars.githubusercontent.com/u/33851180?v=4" width="80px;"  title="Perfil de Ana Maria Carvalho"/><br /><sub><b>Ana Maria Carvalho</b></sub></a><br /><a href="https://github.com/carvalhoanamaria" title="Code"></a></td>
 
+<<<<<<< HEAD
+=======
+<td align="center"><a href="https://github.com/Pietra-Santos"><img src="https://avatars.githubusercontent.com/u/75040165?v=4" width="80px;"  title="Perfil de Pietra Santos"/><br /><sub><b>Pietra Santos</b></sub></a><br /><a href="https://github.com/Pietra-Santos" title="Code"></a></td>
+
+>>>>>>> main
 <td align="center"><a href="https://github.com/hadamakei"><img src="https://avatars.githubusercontent.com/u/88164568?v=4" width="80px;"  title="Perfil de Keila Hadama"/><br /><sub><b>Keila Hadama</b></sub></a><br /><a href="https://github.com/hadamakei" title="Code"></a></td>
    
  <td align="center"><a href="https://github.com/"><img src="" width="80px;"  title="Perfil de XPTO"/><br /><sub><b>XPTO </b></sub></a><br /><a href="https://github.com/" title="Code"></a></td>  
-</tr>
+</td>
 </table>
    
    
