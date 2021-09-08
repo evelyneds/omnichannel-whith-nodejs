@@ -20,12 +20,6 @@ class EmployeeController {
     };
 
 
-
-
-
-
-
-
     async delete(req, res) {
         return res.status(200).json({ message: 'isso ai psiti' });
     };
