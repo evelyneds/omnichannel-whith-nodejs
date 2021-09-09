@@ -1,12 +1,17 @@
-import Sequelize from "sequelize";
-import Customer from "../app/models/Customer";
-import Employee from '../app/models/Employee';
-import Store from '../app/models/Store';
+import Sequelize from 'sequelize';
 import databaseConfig from '../config/database';
-import Product from "../app/models/Product";
 
+import Appointment from '../app/models/Appointment';
+import Customer from '../app/models/Customer';
+import Employee from '../app/models/Employee';
+import Order from '../app/models/Order';
+import OrderItens from '../app/models/OrderItens';
+import Product from '../app/models/Product';
+import ShoppingCart from '../app/models/ShoppingCart';
+import Status from '../app/models/Status';
+import Store from '../app/models/Store';
 
-const models = [ Employee, Customer, Store ,Product ];
+const models = [ Appointment, Customer, Employee, Order, OrderItens, Product, ShoppingCart, Status, Store ];
 
 class Database{
   constructor(){
