@@ -3,9 +3,10 @@ import Customer from "../app/models/Customer";
 import Employee from '../app/models/Employee';
 import Store from '../app/models/Store';
 import databaseConfig from '../config/database';
+import Product from "../app/models/Product";
 
 
-const models = [ Employee, Customer, Store ];
+const models = [ Employee, Customer, Store ,Product ];
 
 class Database{
   constructor(){
