@@ -20,16 +20,8 @@ class EmployeeController {
 
     async update(req, res) {
         return res.status(200).json({ message: 'Atualizado com sucesso' });
-
+    };    
     
-    async delete(req, res) {
-        return res.status(200).json({ message: 'Delete realizado com sucesso.' });
-    };
-
-    async update(req, res) {
-        return res.status(200).json({ message: 'Atualização realizada com sucesso.' });
-
-    };
 }
 export default new EmployeeController();
 
