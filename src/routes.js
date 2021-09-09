@@ -4,6 +4,7 @@ import EmployeeController from './app/controller/EmployeeController';
 import StoreController from './app/controller/StoreController';
 import CustomerController from './app/controller/CustomerController';
 import SessionController from './app/controller/SessionController';
+import EmployeeSessionController from './app/controller/EmployeeSessionController';
 
 const routes = new Router();
 
@@ -22,6 +23,7 @@ routes.put('/update_store', StoreController.update);
  //Rotas Employee
  routes.post('/create_employees', EmployeeController.store);
  routes.get('/read_employees', EmployeeController.index);
+ routes.post('/create_employee_session', EmployeeSessionController.store);
 
  //Rotas Customer
  routes.post('/create_customer', CustomerController.store);

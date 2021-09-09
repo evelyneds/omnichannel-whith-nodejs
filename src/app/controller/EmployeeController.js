@@ -6,18 +6,20 @@ class EmployeeController {
         return res.json({ id, name, email });
     };
 
+
     async index(req, res) {
-
-        //TODO Criação de GET
-        const employee = await Employee.findOne({ where : {
-                email: req.body.email,
-                password_hash: await Employee.passwordHash(req.body.password)
-                }
+        const store = await Employee.findAll({
+        attributes: ['id', 'name'] //Retorna campos específicos
         });
-
-        return res.json(employee);
-            
+        return res.status(200).json(store);
     };
+
+    async delete(req, res) {
+        return res.status(200).json({ message: 'Removido com sucesso' });
+    };
+
+    async update(req, res) {
+        return res.status(200).json({ message: 'Atualizado com sucesso' });
 
     
     async delete(req, res) {
@@ -26,6 +28,7 @@ class EmployeeController {
 
     async update(req, res) {
         return res.status(200).json({ message: 'Atualização realizada com sucesso.' });
+
     };
 }
 export default new EmployeeController();
