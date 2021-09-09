@@ -6,9 +6,10 @@ class CustomerController {
         return res.json({ id, name, email });
     };
 
-    async index() {
-        const customer = await customer.findAll();
-        return res.status(200).json(customer);
+    async index(req,res) {
+        const customer2 = await Customer.findAll();
+        //const {id, name, email} = customer
+        return res.status(200).json(customer2);
     };
 
     async delete(req, res) {
