@@ -3,7 +3,7 @@ import Store from '../models/Store';
 class StoreController {
     async store(req, res) {
         const { id, company_name, address } = await Store.create(req.body);
-        return res.json({ id, company_name, address });//message: 'Usuário cadastrado com sucesso',
+        return res.json({ message: 'Usuário cadastrado com sucesso', id, company_name, address });
     };
 
     async index(req, res) {
