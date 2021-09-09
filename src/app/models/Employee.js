@@ -16,11 +16,15 @@ class Employee extends Model {
         });
         this.addHook('beforeSave', async employee => {
           if(employee.password){
-            employee.password_hash = await bcrypt.hash(employee.password, 10)
+            employee.password_hash = await this.passwordHash(employee.password)
           }
         })
         return this;
       }
+
+    static passwordHash (password) {
+      return bcrypt.hash(password, 10);
+    }
 }
 
 export default Employee;

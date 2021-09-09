@@ -11,18 +11,13 @@ class EmployeeController {
         //TODO Criação de GET
         const employee = await Employee.findOne({ where : {
                 email: req.body.email,
+                password_hash: await Employee.passwordHash(req.body.password)
              }
         });
 
-        return res.status(200).json(employee);
+        return res.json(employee);
         
     };
-
-
-
-
-
-
 
 
     async delete(req, res) {
