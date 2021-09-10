@@ -2,6 +2,20 @@ import OrderItens from '../models/OrderItens';
 
 class OrderItensController {
     async store(req, res) {
+        const { quantity} = req.body;
+
+        const orderItens = await OrderItens.create({
+            customer_id: req.userId,
+            quantity,
+          });
+
+        return res.status(200).json(orderItens);
+
+
+
+
+
+
         const { id } = await OrderItens.create(req.body);
         return res.json({ message: 'Pedido cadastrado com sucesso',id });
     };

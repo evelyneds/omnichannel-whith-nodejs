@@ -1,26 +1,20 @@
-import Order from '../models/Order';
+import Demand from '../models/Demand';
 
-class OrderController {
+class DemandController {
     async store(req, res) {
 
-        const { id, status_id, customer_id, appointment_id } = req.body;
+        const { status_id} = req.body;
 
-        //const store = await Order.create(req.body);
-        console.log(req.userId);
-        const appointment = await Order.create({
+        const demand = await Demand.create({
             customer_id: req.userId,
             status_id,
-            customer_id, 
-            appointment_id,
           });
 
-        //const { id } = await Order.create(req.body);
-        //return res.json({ message: 'Pedido cadastrado com sucesso',id });
-        return res.status(200).json(appointment,);
+        return res.status(200).json(demand);
     };
 
     async index(req, res) {
-        const order = await Order.findAll({
+        const demand = await Demand.findAll({
             attributes: ['id']
         });
         return res.status(200).json(id);
@@ -44,4 +38,4 @@ class OrderController {
     };
 }
 
-export default new OrderController();
+export default new DemandController();

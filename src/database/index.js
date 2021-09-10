@@ -10,8 +10,9 @@ import Product from '../app/models/Product';
 import ShoppingCart from '../app/models/ShoppingCart';
 import Status from '../app/models/Status';
 import Store from '../app/models/Store';
+import Demand from '../app/models/Demand';
 
-const models = [ Appointment, Customer, Employee, Order, OrderItens, Product, ShoppingCart, Status, Store ];
+const models = [ Appointment, Customer, Employee, Order, OrderItens, Product, ShoppingCart, Status, Store, Demand ];
 
 class Database{
   constructor(){

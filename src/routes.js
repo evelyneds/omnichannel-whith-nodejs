@@ -12,7 +12,9 @@ import AppointmentController from './app/controller/AppointmentController';
 import OrderController from './app/controller/OrderController';
 import ShoppingCartController from './app/controller/ShoppingCartController';
 import OrderItensController from './app/controller/OrderItensController';
+import DemandController from './app/controller/DemandController';
 
+import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
 
@@ -59,6 +61,11 @@ routes.put('/update_appointment/:id', AppointmentController.update);
 routes.delete('/delete_appointment/:id', AppointmentController.delete);
 routes.get('/show_appointment/:id', AppointmentController.show);
 */
+
+routes.use(authMiddleware);
+
+routes.post('/create_demand', DemandController.store);
+
 //Rotas Order
 routes.post('/create_order', OrderController.store);
 routes.get('/read_order', OrderController.index);
