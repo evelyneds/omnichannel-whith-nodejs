@@ -3,7 +3,10 @@ import Product from '../models/Product';
 
 class OrderItensController {
     async store(req, res) {
-        const { demand_id, quantity, product_id } = req.body;
+        const { quantity, product_id } = req.body;
+
+        const demand_id = req.params.id;
+        console.log(demand_id)
 
         let itens = await OrderItens.findOne({
             where: { demand_id, product_id }

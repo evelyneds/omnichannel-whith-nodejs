@@ -60,7 +60,7 @@ routes.delete('/delete_appointment/:id', AppointmentController.delete);
 routes.get('/show_appointment/:id', AppointmentController.show);
 */
 
-routes.use(authMiddleware);
+//routes.use(authMiddleware);
 
 
 
@@ -73,7 +73,7 @@ routes.get('/show_demand/:id', DemandController.show);
 
 
 //Rotas OrderItens
-routes.post('/create_itens', OrderItensController.store);
+routes.post('/create_itens/:id', OrderItensController.store);
 routes.get('/read_itens', OrderItensController.index);
 routes.put('/update_itens/:id', OrderItensController.update);
 routes.delete('/delete_itens/:id', OrderItensController.delete);
