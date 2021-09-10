@@ -8,9 +8,9 @@ module.exports = {
         autoIncrement: true,
         primaryKey: true,
       },
-      order_id: {
+      demand_id: {
         type: Sequelize.INTEGER,
-        references: { model:'orders', key: 'id'},
+        references: { model:'demands', key: 'id'},
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
         allowNull: true,

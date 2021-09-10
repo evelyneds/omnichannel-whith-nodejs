@@ -9,8 +9,6 @@ import EmployeeSessionController from './app/controller/EmployeeSessionControlle
 import ProductController from './app/controller/ProductController';
 import StatusController from './app/controller/StatusController';
 import AppointmentController from './app/controller/AppointmentController';
-import OrderController from './app/controller/OrderController';
-import ShoppingCartController from './app/controller/ShoppingCartController';
 import OrderItensController from './app/controller/OrderItensController';
 import DemandController from './app/controller/DemandController';
 
@@ -64,21 +62,15 @@ routes.get('/show_appointment/:id', AppointmentController.show);
 
 routes.use(authMiddleware);
 
+
+
+//Rotas Order/Demand
 routes.post('/create_demand', DemandController.store);
+routes.get('/read_demand', DemandController.index);
+routes.put('/update_demand/:id', DemandController.update);
+routes.delete('/delete_demand/:id', DemandController.delete);
+routes.get('/show_demand/:id', DemandController.show);
 
-//Rotas Order
-routes.post('/create_order', OrderController.store);
-routes.get('/read_order', OrderController.index);
-routes.put('/update_order/:id', OrderController.update);
-routes.delete('/delete_order/:id', OrderController.delete);
-routes.get('/show_order/:id', OrderController.show);
-
-//Rotas Cart
-routes.post('/create_cart', ShoppingCartController.store);
-routes.get('/read_cart', ShoppingCartController.index);
-routes.put('/update_cart/:id', ShoppingCartController.update);
-routes.delete('/delete_cart/:id', ShoppingCartController.delete);
-routes.get('/show_cart/:id', ShoppingCartController.show);
 
 //Rotas OrderItens
 routes.post('/create_itens', OrderItensController.store);
