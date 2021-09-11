@@ -1,4 +1,5 @@
 import Product from '../models/Product';
+const { Op } = require("sequelize"); 
 
 class ProductController {
     async store(req, res) {
@@ -8,7 +9,19 @@ class ProductController {
 
     async index(req, res) {
         const product = await Product.findAll({
-        });
+            where: {
+                quantity: {[Op.gt]: 0},
+            }, 
+            
+            order: [
+                ['description', 'ASC'],
+                
+            ],
+            attributes: ['id', 'description', 'value']
+
+        }) 
+        
+    
         return res.status(200).json(product);
     };
 
