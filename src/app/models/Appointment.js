@@ -12,8 +12,8 @@ class Appointment extends Model {
     return this;
   }
   static associate(models){
-    this.belongsTo( models.Customer, { foreignKey: 'customer_id', as: 'customer'})
-    this.belongsTo( models.Employee, { foreignKey: 'employee_id', as: 'employee'})
+    this.belongsTo( models.Demand, { foreignKey: 'demand_id', as: 'demand'})
+    this.belongsTo( models.Store, { foreignKey: 'store_id', as: 'store'})
   }
 };
 

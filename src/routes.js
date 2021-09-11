@@ -64,7 +64,7 @@ routes.get('/show_appointment/:id', AppointmentController.show);
 
 routes.use(authMiddleware);
 
-
+routes.post('/create_appointment', AppointmentController.store);
 
 //Rotas Order/Demand
 routes.post('/create_demand', DemandController.store);
