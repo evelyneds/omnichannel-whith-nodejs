@@ -42,7 +42,18 @@ class OrderItensController {
     };
 
     async delete(req, res) {
-        const orderitens = await OrderItens.findByPk(req.params.id);
+        //const { product_id } = req.body;
+       // const demand_id = req.params.id;
+        //console.log(demand_id)
+
+        const orderitens = await OrderItens.findOne({
+                where: {
+                  demand_id: req.params.id,
+                  product_id: req.body.product_id,
+                },
+              });
+        
+        
         if (!orderitens) {
             return response(res, 404, 'Produto não encontrado')
         } else {
@@ -63,7 +74,7 @@ class OrderItensController {
 
     async show(req, res) {
         const orderitens = await OrderItens.findByPk(req.params.id);
-        return res.json({ id });
+        return res.json({ orderitens});
     };
 }
 
