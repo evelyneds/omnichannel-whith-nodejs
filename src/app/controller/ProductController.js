@@ -1,5 +1,5 @@
 import Product from '../models/Product';
-const { Op } = require("sequelize"); 
+import {Op} from "sequelize"; 
 
 class ProductController {
     async store(req, res) {
@@ -12,36 +12,45 @@ class ProductController {
             where: {
                 quantity: {[Op.gt]: 0},
             }, 
-            
             order: [
-                ['description', 'ASC'],
-                
+                ['description', 'ASC'], 
             ],
             attributes: ['id', 'description', 'value']
-
-        }) 
-        
-    
-        return res.status(200).json(product);
+        })
+        if (!product) {
+            return res.status(404).json({ message: "Produto não encontrado." });
+          }else{
+            return res.status(200).json({product, message: "Produtos listado sucesso." });
+          } 
     };
 
     async delete(req, res) {
         const product = await Product.findByPk(req.params.id);
-        await product.destroy();
-        return res.status(200).json({ message: 'Produto removido com sucesso.' });
+        if (!product) {
+            return res.status(404).json({message: "Produto não encontrado." });
+          }else{
+            await product.destroy();
+            return res.status(200).json({product, message: "Produto removido com sucesso." });
+          } 
     };
 
     async update(req, res) {
         const product = await Product.findByPk(req.params.id);
+        if (!product) {
+            return res.status(404).json({message: "Produto não encontrado." });
+          }else{
         await product.update(req.body);
-        return res.json({ product });
-        // return res.status(200).json({ message: 'Produto atualizado com sucesso' });
+         return res.status(200).json({ product, message: 'Produto atualizado com sucesso' });
+    } 
     };
 
     async show(req, res) {
         const product = await Product.findByPk(req.params.id);
-        return res.json({ product });
-
+        if (!product) {
+            return res.status(404).json({message: "Produto não encontrado." });
+          }else{
+            return res.status(200).json({ product, message: 'Produto exibido com sucesso' });
+          }
     };
 }
 
