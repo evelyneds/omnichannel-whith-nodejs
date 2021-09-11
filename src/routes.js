@@ -13,13 +13,19 @@ import OrderController from './app/controller/OrderController';
 import ShoppingCartController from './app/controller/ShoppingCartController';
 import OrderItensController from './app/controller/OrderItensController';
 
+import swaggerUI from 'swagger-ui-express';
+import swaggerDocument from '../swagger';
 
 const routes = new Router();
+
 
 //Teste
 routes.get('/', (req, res) => {
   res.json({ message: "Teste de Rotas OK." })
 });
+
+// Rota Swagger
+routes.use('/swagger',swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
 //Padronização das Rotas em CRUD_ [create_ read_ update_ delete_]
 
