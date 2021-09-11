@@ -67,16 +67,17 @@ routes.use(authMiddleware);
 //Rotas Order/Demand
 routes.post('/create_demand', DemandController.store);
 routes.get('/read_demand', DemandController.index);
-routes.put('/update_demand/:id', DemandController.update);
+//routes.put('/update_demand/:id', DemandController.update);
 routes.delete('/delete_demand/:id', DemandController.delete);
 routes.get('/show_demand/:id', DemandController.show);
 
 
 //Rotas OrderItens
-routes.post('/create_itens/:id', OrderItensController.store);
+routes.post('/create_itens', OrderItensController.store);
 routes.get('/read_itens', OrderItensController.index);
 routes.put('/update_itens/:id', OrderItensController.update);
-routes.delete('/delete_itens/:id', OrderItensController.delete);
+routes.delete('/delete_itens', OrderItensController.delete);
+
 routes.get('/show_itens/:id', OrderItensController.show);
 
 

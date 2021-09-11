@@ -15,6 +15,10 @@ class OrderItens extends Model {
     this.belongsTo( models.Order, { foreignKey: 'demand_id', as: 'demand'})
     this.belongsTo( models.Product, { foreignKey: 'product_id', as: 'product'})
   }
+
+
+
 };
 
 export default OrderItens;
+
