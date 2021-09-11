@@ -26,7 +26,9 @@ routes.get('/', (req, res) => {
 //Rotas Store
 routes.post('/create_store', StoreController.store);
 routes.get('/read_store', StoreController.index);
-routes.put('/update_store', StoreController.update);
+routes.put('/update_store/:id', StoreController.update);
+routes.delete('/delete_store/:id', StoreController.delete);
+routes.get('/show_store/:id', StoreController.show);
 
 //Rotas Employee
 routes.post('/create_employees', EmployeeController.store);
@@ -35,7 +37,7 @@ routes.post('/create_employee_session', EmployeeSessionController.store);
 
 //Rotas Customer
 routes.post('/create_customer', CustomerController.store);
-routes.get('/read_customers', CustomerController.index);
+routes.get('/read_customer', CustomerController.index);
 routes.post('/create_session', SessionController.store);
 
 //Rotas Product
@@ -43,7 +45,7 @@ routes.post('/create_product', ProductController.store);
 routes.get('/read_product', ProductController.index);
 routes.put('/update_product/:id', ProductController.update);
 routes.delete('/delete_product/:id', ProductController.delete);
-routes.get('/read_product_id/:id', ProductController.show);
+routes.get('/show_product/:id', ProductController.show);
 
 //Rotas Status
 routes.post('/create_status', StatusController.store);

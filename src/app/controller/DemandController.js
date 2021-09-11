@@ -1,5 +1,5 @@
 import Demand from "../models/Demand";
-const { Op } = require("sequelize"); 
+import {Op} from "sequelize"; 
 
 class DemandController {
   async store(req, res) {
