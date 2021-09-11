@@ -21,6 +21,7 @@ class AppointsController {
         customer_id: req.userId
       },
     })
+    
     let demand_id = demandUser.id;
     console.log(demand_id);
 
@@ -55,6 +56,10 @@ class AppointsController {
       store_id,
       date: startHour,
     });
+
+    demandUser.status_id = 2
+    demandUser.save()
+
     return res.status(200).json(appointment);
 
 

@@ -15,6 +15,8 @@ class Appointment extends Model {
     this.belongsTo( models.Demand, { foreignKey: 'demand_id', as: 'demand'})
     this.belongsTo( models.Store, { foreignKey: 'store_id', as: 'store'})
   }
+
+  
 };
 
 export default Appointment;
