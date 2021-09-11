@@ -60,7 +60,7 @@ routes.delete('/delete_appointment/:id', AppointmentController.delete);
 routes.get('/show_appointment/:id', AppointmentController.show);
 */
 
-//routes.use(authMiddleware);
+routes.use(authMiddleware);
 
 
 

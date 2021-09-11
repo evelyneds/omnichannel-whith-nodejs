@@ -7,12 +7,18 @@ module.exports = {
     return queryInterface.bulkInsert('statuses', [
       {
         id: 1,
-        status: 'Realizado',
+        status: 'Em andamento',
         created_at:'2021-09-07 20:37:10.676+00',
         updated_at:'2021-09-07 20:37:10.676+00',
       },
       {
         id: 2,
+        status: 'Realizado',
+        created_at:'2021-09-07 20:37:10.676+00',
+        updated_at:'2021-09-07 20:37:10.676+00',
+      },
+      {
+        id: 3,
         status: 'Retirado',
         created_at:'2021-09-07 20:37:10.676+00',
         updated_at:'2021-09-07 20:37:10.676+00',
