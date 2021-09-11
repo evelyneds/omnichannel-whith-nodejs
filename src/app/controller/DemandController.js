@@ -1,9 +1,8 @@
 import Demand from '../models/Demand';
-
+const { Op } = require("sequelize"); 
 
 class DemandController {
     async store(req, res) {
-
         const { status_id } = req.body;
 
         const demand = await Demand.create({
@@ -15,9 +14,19 @@ class DemandController {
 
     async index(req, res) {
         const demand = await Demand.findAll({
-            attributes: ['id']
-        });
-        return res.status(200).json(id);
+            where: {
+                status_id: {[Op.gt]: 1},
+                customer_id: req.userId,
+            }, 
+            
+            order: [
+                ['Id', 'ASC'],
+                
+            ],
+            attributes: ['id', 'customer_id', 'status_id']
+
+        })
+        return res.status(200).json(demand);
     };
 
     async delete(req, res) {

@@ -25,6 +25,7 @@ module.exports = {
 
        status_id: {
          type: Sequelize.INTEGER,
+         //defaultValue: 1,
          references: { model:'statuses', key: 'id'},
          onUpdate: 'CASCADE',
          onDelete: 'SET NULL',
