@@ -17,7 +17,7 @@ module.exports = {
 
   //Employee
 
-  //Customer
+  
 
   paths: {
     //Store
@@ -119,6 +119,65 @@ module.exports = {
         },
       },
     },
+    //Customer
+    '/create_customer': {
+      post: {
+        tags: [
+          'Customer',
+        ],
+        parameters: [
+          {
+            in: 'body',//body
+            name: 'body',
+            description: 'Cadastro de cliente ...',
+            required: true,
+            schema: { $ref: '#/definitions/CreateCustomer' },
+          },
+        ],
+        summary: 'Cadastra um Cliente na base',
+        description: '',
+        operationId: 'add',
+        consumes: [
+          'application/json',
+        ],
+        produces: [
+          'application/json',
+        ],
+        responses: {
+          200: {
+            description: 'Cliente cadastrado com sucesso!',
+            schema: {
+              type: 'array',
+              items: { $ref: '#/definitions/CreateCustomer' },
+            },
+          },
+          409: { description: 'Erro ao cadastrar cliente!' },
+        },
+      },
+      definitions: {
+        Product: {
+          type: 'object',
+          required: [
+            'name',
+            'email',
+            'password',
+          ],
+          properties: {
+            id: {
+              type: 'integer',
+              format: 'integer',
+            },
+            name: { type: 'string' },
+            email: { type: 'double' },
+            password: { type: 'Integer' },
+          },
+          xml: { name: 'Customer' },
+        }
+      },
+    },
+
+
+
     //Status
     '/create_status': {
       post: {
@@ -738,7 +797,7 @@ module.exports = {
         },
       ],
       summary: 'Cadastra um Pedido na base',
-      description: '',
+      description: 'cadastro',
       operationId: 'add',
       consumes: [
         'application/json',
@@ -778,6 +837,168 @@ module.exports = {
       }
     },
   },
+  '/read_demand': {
+    get: {
+      tags: [
+        'Demand',
+      ],
+      parameters: [],
+      summary: 'Lista histórico de pedidos',
+      description: '',
+      operationId: 'Read',
+      consumes: [
+        'application/json',
+      ],
+      produces: [
+        'application/json',
+      ],
+      responses: {
+        200: {
+          description: 'Listagem de pedidos realizada com sucesso!',
+          schema: {
+            type: 'array',
+            items: { $ref: '#/definitions/ReadDemand' },
+          },
+        },
+        409: { description: 'Erro ao listar pedidos!' },
+      },
+      definitions: {
+        Product: {
+          type: 'object',
+          required: [
+            'customer_id',
+            'status_id',
+        
+          ],
+          properties: {
+            id: {
+              type: 'integer',
+              format: 'integer',
+            },
+            customer_id: { type: 'integer' },
+            status_id: { type: 'integer' },
+          },
+          xml: { name: 'Demand' },
+        }
+      },
+    },
+  },
+  '/delete_demand/{id}': {
+    delete: {
+      tags: [
+          'Demand',
+      ],
+      parameters: [
+        // expected params.
+        {
+          name: "id", // name of the param
+          in: "path", // location of the param
+          schema: {
+            items: { $ref: '#/definitions/DeleteDemand' },
+          },
+          required: true, // Mandatory param
+          description: "A single todo id", // param desc.
+        },
+      ],
+      summary: 'Deletar pedido especifico',
+      description: '',
+      operationId: 'DeleteDemand',
+      consumes: [
+        'application/json',
+      ],
+      produces: [
+        'application/json',
+      ],
+      responses: {
+        200: {
+          description: 'Pedido deletado com sucesso!',
+          schema: {
+            type: 'array',
+            items: { $ref: '#/definitions/DeleteDemand' },
+          },
+        },
+        409: { description: 'Erro ao deletar pedido!' },
+      },
+      definitions: {
+        Product: {
+          type: 'object',
+          required: [
+            'customer_id',
+            'status_id',
+          ],
+          properties: {
+            id: {
+              type: 'integer',
+              format: 'integer',
+            },
+            customer_id: { type: 'integer' },
+            status_id: { type: 'Integer' },
+          },
+          xml: { name: 'Demand' },
+        }
+      },
+    },
+  },
+
+  '/show_order/{id}': { 
+    get: {
+      tags: [
+        'Demand',
+      ],
+      parameters: [
+        // expected params.
+        {
+          name: "id", // name of the param
+          in: "path", // location of the param
+          schema: {
+            items: { $ref: '#/definitions/ShowDemandI' },
+          },
+          required: true, // Mandatory param
+          description: "A single todo id", // param desc.
+        },
+      ],
+      summary: 'Lista pedido especifico',
+      description: '',
+      operationId: 'ReadI',
+      consumes: [
+        'application/json',
+      ],
+      produces: [
+        'application/json',
+      ],
+      responses: {
+        200: {
+          description: 'Listagem de pedido realizada com sucesso!',
+          schema: {
+            type: 'array',
+            items: { $ref: '#/definitions/ShowDemandI' },
+          },
+        },
+        409: { description: 'Erro ao listar pedido!' },
+      },
+      definitions: {
+        Product: {
+          type: 'object',
+          required: [
+            'product_id',
+            'customer_id',
+            'status_id',
+          ],
+          properties: {
+            id: {
+              type: 'integer',
+              format: 'integer',
+            },
+            product_id: { type: 'integer' },
+            customer_id: { type: 'integer' },
+            status_id: { type: 'integer' },
+          },
+          xml: { name: 'Demand' },
+        }
+      },
+    },
+  },
+
 
     //fim do path
   },
@@ -961,6 +1182,60 @@ module.exports = {
       },
       json: { description: 'Demand' },
     },
+    ReadDemand: {
+      type: 'object',
+      required: [
+        'customer_id',
+        'status_id',
+      ],
+      properties: {
+        customer_id: { type: 'integer' },//{ type: 'string' }
+        status_id: { type: 'integer' },
+      },
+      json: { description: 'Demand' },
+    },
+    DeleteDemand: {
+      type: 'object',
+      required: [
+        'customer_id',
+        'status_id',
+      ],
+      properties: {
+        customer_id:{ type: 'integer' },
+        status_id: { type: 'integer' },//{ type: 'string' }
+
+      },
+      json: { description: 'Demand' },
+    },
+    ShowDemandI: {
+      type: 'object',
+      required: [
+        'customer_id',
+        'status_id',
+      ],
+      properties: {
+        customer_id: { type: 'integer' },//{ type: 'string' }
+        status_id: { type: 'integer' },
+      },
+      json: { description: 'Demand' },
+    },
+    CreateCustomer: {
+      type: 'object',
+      required: [
+        'name',
+        'email',
+        'password',
+      ],
+      properties: {
+        name: { type: 'string' },//{ type: 'string' }
+        email: { type: 'double' },
+        password: { type: 'integer' },
+      },
+      json: { description: 'Product' },
+    },
+
+
+    //fim modelo
   },
 
 

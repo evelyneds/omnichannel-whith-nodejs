@@ -9,12 +9,12 @@ import EmployeeSessionController from './app/controller/EmployeeSessionControlle
 import ProductController from './app/controller/ProductController';
 import StatusController from './app/controller/StatusController';
 import AppointmentController from './app/controller/AppointmentController';
-import OrderController from './app/controller/OrderController';
-import ShoppingCartController from './app/controller/ShoppingCartController';
 import OrderItensController from './app/controller/OrderItensController';
+import DemandController from './app/controller/DemandController';
 
 import swaggerUI from 'swagger-ui-express';
 import swaggerDocument from '../swagger';
+import authMiddleware from './app/middlewares/auth';
 
 const routes = new Router();
 
@@ -30,9 +30,8 @@ routes.use('/swagger',swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 //Padronização das Rotas em CRUD_ [create_ read_ update_ delete_]
 
 //Rotas Store
-routes.post('/create_store', StoreController.store);
 routes.get('/read_store', StoreController.index);
-routes.put('/update_store', StoreController.update);
+routes.get('/show_store/:id', StoreController.show);
 
 //Rotas Employee
 routes.post('/create_employees', EmployeeController.store);
@@ -41,15 +40,12 @@ routes.post('/create_employee_session', EmployeeSessionController.store);
 
 //Rotas Customer
 routes.post('/create_customer', CustomerController.store);
-routes.get('/read_customers', CustomerController.index);
+routes.get('/read_customer', CustomerController.index);
 routes.post('/create_session', SessionController.store);
 
 //Rotas Product
-routes.post('/create_product', ProductController.store);
 routes.get('/read_product', ProductController.index);
-routes.put('/update_product/:id', ProductController.update);
-routes.delete('/delete_product/:id', ProductController.delete);
-routes.get('/read_product_id/:id', ProductController.show);
+routes.get('/show_product/:id', ProductController.show);
 
 //Rotas Status
 routes.post('/create_status', StatusController.store);
@@ -58,32 +54,33 @@ routes.put('/update_status/:id', StatusController.update);
 routes.delete('/delete_status/:id', StatusController.delete);
 routes.get('/show_status/:id', StatusController.show);
 
-/*//Rotas Appointment
-routes.post('/create_appointment', AppointmentController.store);
-routes.get('/read_appointment', AppointmentController.index);
-routes.put('/update_appointment/:id', AppointmentController.update);
-routes.delete('/delete_appointment/:id', AppointmentController.delete);
-routes.get('/show_appointment/:id', AppointmentController.show);
-*/
-//Rotas Order
-routes.post('/create_order', OrderController.store);
-routes.get('/read_order', OrderController.index);
-routes.put('/update_order/:id', OrderController.update);
-routes.delete('/delete_order/:id', OrderController.delete);
-routes.get('/show_order/:id', OrderController.show);
+routes.use(authMiddleware);
 
-//Rotas Cart
-routes.post('/create_cart', ShoppingCartController.store);
-routes.get('/read_cart', ShoppingCartController.index);
-routes.put('/update_cart/:id', ShoppingCartController.update);
-routes.delete('/delete_cart/:id', ShoppingCartController.delete);
-routes.get('/show_cart/:id', ShoppingCartController.show);
+routes.post('/create_store', StoreController.store);
+routes.put('/update_store/:id', StoreController.update);
+routes.delete('/delete_store/:id', StoreController.delete);
+
+routes.post('/create_product', ProductController.store);
+routes.delete('/delete_product/:id', ProductController.delete);
+routes.put('/update_product/:id', ProductController.update);
+
+routes.post('/create_appointment', AppointmentController.store);
+routes.put('/update_appointment/:id', AppointmentController.update);
+
+//Rotas Order/Demand
+//routes.post('/create_demand', DemandController.store); Demanda criada automaticamente
+routes.get('/read_demand', DemandController.index);
+//routes.put('/update_demand/:id', DemandController.update); Demanda atualizada automaticamente
+routes.delete('/delete_demand/:id', DemandController.delete);
+routes.get('/show_demand/:id', DemandController.show); //Retorna detalhes do pedido
+routes.put('/finish_demand/:id', DemandController.updateStatus);
+routes.get('/show_All_demand/:id', DemandController.showAll); //Retorna todos os pedidos do customer
 
 //Rotas OrderItens
 routes.post('/create_itens', OrderItensController.store);
 routes.get('/read_itens', OrderItensController.index);
 routes.put('/update_itens/:id', OrderItensController.update);
-routes.delete('/delete_itens/:id', OrderItensController.delete);
+routes.delete('/delete_itens', OrderItensController.delete);
 routes.get('/show_itens/:id', OrderItensController.show);
 
 

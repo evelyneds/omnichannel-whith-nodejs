@@ -1,34 +1,71 @@
 import Product from '../models/Product';
+import {Op} from "sequelize"; 
 
 class ProductController {
     async store(req, res) {
-        const { id, description, value, quantity } = await Product.create(req.body);
+        //Validação funcionário
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
+        const { description, value, quantity } = await Product.create(req.body);
         return res.json({ message: 'Produto cadastrado com sucesso', id, description, value, quantity });
     };
 
     async index(req, res) {
         const product = await Product.findAll({
-        });
-        return res.status(200).json(product);
+            where: {
+                quantity: {[Op.gt]: 0},
+            }, 
+            order: [
+                ['description', 'ASC'], 
+            ],
+            attributes: ['id', 'description', 'value']
+        })
+        if (!product) {
+            return res.status(404).json({ message: "Produto não encontrado." });
+          }else{
+            return res.status(200).json({product, message: "Produtos listado sucesso." });
+          } 
     };
 
     async delete(req, res) {
+        //Validação funcionário
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
         const product = await Product.findByPk(req.params.id);
-        await product.destroy();
-        return res.status(200).json({ message: 'Produto removido com sucesso.' });
+        if (!product) {
+            return res.status(404).json({message: "Produto não encontrado." });
+          }else{
+            await product.destroy();
+            return res.status(200).json({product, message: "Produto removido com sucesso." });
+          } 
     };
 
     async update(req, res) {
+        //Validação funcionário
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
         const product = await Product.findByPk(req.params.id);
+        if (!product) {
+            return res.status(404).json({message: "Produto não encontrado." });
+          }else{
         await product.update(req.body);
-        return res.json({ product });
-        // return res.status(200).json({ message: 'Produto atualizado com sucesso' });
+         return res.status(200).json({ product, message: 'Produto atualizado com sucesso' });
+    } 
     };
 
     async show(req, res) {
         const product = await Product.findByPk(req.params.id);
-        return res.json({ product });
-
+        if (!product) {
+            return res.status(404).json({message: "Produto não encontrado." });
+          }else{
+            return res.status(200).json({ product, message: 'Produto exibido com sucesso' });
+          }
     };
 }
 
