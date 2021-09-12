@@ -8,7 +8,7 @@ class ProductController {
         if (employee == false) {
             return res.status(404).json({ message: "Usuário não autorizado" });
         };
-        const { id, description, value, quantity } = await Product.create(req.body);
+        const { description, value, quantity } = await Product.create(req.body);
         return res.json({ message: 'Produto cadastrado com sucesso', id, description, value, quantity });
     };
 

@@ -6,7 +6,7 @@ import Product from "../models/Product";
 import {Op} from "sequelize"; 
 
 class DemandController {
-  async store(req, res) {
+  /*async store(req, res) {
     const { status_id } = req.body;
 
     const demand = await Demand.create({
@@ -16,7 +16,7 @@ class DemandController {
     return res
       .status(200)
       .json({ message: "Pedido criado com sucesso.", demand });
-  }
+  }*/
 
   async index(req, res) {
     const demand = await Demand.findAll({
@@ -122,6 +122,29 @@ class DemandController {
     
     return res.json({id, customer_id, customer, status,demand,products});
   }
+
+  async showAll(req, res) {
+    const customerDemandId = (req.params.id); //customer_id = url
+
+    //Validação acesso
+    const customer_id = req.userId;
+    const employee = req.isEmployee;
+
+    if ((customer_id != customerDemandId) && (employee == false)) {
+      return res.status(404).json({ message: "Consulta não autorizada" });
+    }
+
+    console.log (req.params.id);
+    const demanda = await Demand.findAll({
+      where: {
+        customer_id: req.params.id ,
+      },
+    });
+    console.log (demanda);
+
+    return res.json(demanda);
+  }
+
 }
 
 export default new DemandController();

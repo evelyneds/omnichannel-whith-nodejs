@@ -1,29 +1,29 @@
-import * as Yup from 'yup';
-import { startOfHour, parseISO, isBefore, format } from 'date-fns'
-import pt from 'date-fns/locale/pt-BR';
-import Store from '../models/Store';
-import Customer from '../models/Customer';
-import Appointment from '../models/Appointment';
-import Demand from '../models/Demand';
-import OrderItens from '../models/OrderItens';
-import Product from '../models/Product';
+import * as Yup from "yup";
+import { startOfHour, parseISO, isBefore, format } from "date-fns";
+import pt from "date-fns/locale/pt-BR";
+import Store from "../models/Store";
+import Customer from "../models/Customer";
+import Appointment from "../models/Appointment";
+import Demand from "../models/Demand";
+import OrderItens from "../models/OrderItens";
+import Product from "../models/Product";
 //import Notifications from '../schema/Notifications';
 
 class AppointsController {
   async index(req, res) {
-    return res.status(200).json({ message: 'Teste de Acesso' });
-  };
+    return res.status(200).json({ message: "Teste de Acesso" });
+  }
   async store(req, res) {
-    console.log(req.userId)
+    console.log(req.userId);
     const { store_id, date } = req.body;
     // console.log(demand_id)
     let demandUser = await Demand.findOne({
       where: {
         status_id: 1,
-        customer_id: req.userId
+        customer_id: req.userId,
       },
-    })
-    
+    });
+
     let demand_id = demandUser.id;
     console.log(demand_id);
 
@@ -33,24 +33,26 @@ class AppointsController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ message: 'Dados são inválidos' })
-    };
+      return res.status(400).json({ message: "Dados são inválidos" });
+    }
 
     const storeExists = await Store.findOne({
       where: {
         id: store_id,
-      }
+      },
     });
     if (!storeExists) {
-      return res.status(401).json({ message: 'Loja não cadastrada em nossa base!' })
+      return res
+        .status(401)
+        .json({ message: "Loja não cadastrada em nossa base!" });
     }
 
     const startHour = startOfHour(parseISO(date));
 
     if (isBefore(startHour, new Date())) {
       return res.status(400).json({
-        message: 'Horário não disponível'
-      })
+        message: "Horário não disponível",
+      });
     }
 
     const appointment = await Appointment.create({
@@ -60,8 +62,8 @@ class AppointsController {
     });
 
     //Atualização de status
-    demandUser.status_id = 2
-    await demandUser.save()
+    demandUser.status_id = 2;
+    await demandUser.save();
 
     //Atualização de inventario
     const cart = await OrderItens.findAll({
@@ -71,40 +73,28 @@ class AppointsController {
     });
     const product = cart.map((item) => {
       return item.product_id;
-    })
-    console.log(JSON.stringify(product)); //product é um array
+    });
+    //console.log(JSON.stringify(product)); //product é um array
     await Product.decrement("quantity", { where: { id: product } });
 
-
     return res.status(200).json(appointment);
+  }
 
+  async update(req, res) {
+    const appointment = await Appointment.findByPk(req.params.id);
 
-    /*async update(req, res) {
-      const status = await Status.findByPk(req.params.id);
-      if (!status) {
-          return res.status(404).json({ message: "Nenhum status encontrado." });
-      } else {
-          await status.update(req.body);
-          return res.status(200).json({ message: 'Status atualizado com sucesso.', status });
+    if (!appointment) {
+      return res
+        .status(404)
+        .json({ message: "Nenhum agendamento encontrado." });
+    } else {
+        await appointment.update(req.body);
+        console.log('Date de function ' + Date())
+        return res
+          .status(200)
+          .json({ message: "Agendamento atualizado com sucesso.", appointment });
       }
-  };*/
-
-
-    /*const user = await Customer.findByPk(req.userId);
-    const formDate = format(
-      startHour,
-      "'dia' dd 'de' MMMM', às' H:mm'h'",
-      { locale: pt}
-    )*/
-
-    /*
-    await Notifications.create({
-      content: `Você tem um novo agendamento de ${user.name} data: ${formDate}`,
-      user: employee_id
-    })
-    return res.status(200).json(appointment);
-    */ //Não vamos trabalhar com notificações na primeira fase do projeto
-  };
+  }
 }
 
 export default new AppointsController();

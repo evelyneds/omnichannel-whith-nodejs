@@ -21,6 +21,21 @@ class OrderItensController {
             })
         }
 
+        const produto = await Product.findOne({
+            where: {
+                id: product_id,
+            },
+          });
+        //const produto = Product.product_id
+        if (!produto) {
+            return res.status(404).json({ message: 'O produto não existe' });
+        }
+
+        if (produto.quantity < 1) {
+            return res.status(404).json({ message: 'Produto indisponível' });
+        }
+        console.log(produto.quantity)
+
         const demand_id = demandUser.id;
         //console.log(demand_id);
 
@@ -57,12 +72,7 @@ class OrderItensController {
         return res.status(200).json(id);
     };
 
-    async delete(req, res) {
-        //const { product_id } = req.body;
-        // const demand_id = req.params.id;
-        //console.log(demand_id)
-
-        //TODO Transformar em função
+    async delete(req, res) {      
         let demandUser = await Demand.findOne({
             where: {
                 status_id: 1,
