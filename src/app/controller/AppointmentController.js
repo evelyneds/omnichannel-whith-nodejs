@@ -5,6 +5,8 @@ import Store from '../models/Store';
 import Customer from '../models/Customer';
 import Appointment from '../models/Appointment';
 import Demand from '../models/Demand';
+import OrderItens from '../models/OrderItens';
+import Product from '../models/Product';
 //import Notifications from '../schema/Notifications';
 
 class AppointsController {
@@ -57,8 +59,22 @@ class AppointsController {
       date: startHour,
     });
 
+    //Atualização de status
     demandUser.status_id = 2
     await demandUser.save()
+
+    //Atualização de inventario
+    const cart = await OrderItens.findAll({
+      where: {
+        demand_id,
+      },
+    });
+    const product = cart.map((item) => {
+      return item.product_id;
+    })
+    console.log(JSON.stringify(product)); //product é um array
+    await Product.decrement("quantity", { where: { id: product } });
+
 
     return res.status(200).json(appointment);
 

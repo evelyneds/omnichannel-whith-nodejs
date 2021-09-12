@@ -13,8 +13,16 @@ class OrderItensController {
                 customer_id: req.userId
             },
         })
+
+        if (!demandUser){
+            demandUser = await Demand.create({
+                status_id: 1,
+                customer_id: req.userId
+            })
+        }
+
         const demand_id = demandUser.id;
-        console.log(demand_id);
+        //console.log(demand_id);
 
         let itens = await OrderItens.findOne({
             where: { demand_id, product_id }
