@@ -72,9 +72,19 @@ class DemandController {
   }
 
   async show(req, res) {
-    const demand= await Demand.findByPk(req.params.id);
+    const demand = await Demand.findByPk(req.params.id);
 
-    const {id,customer_id, status_id}= await Demand.findByPk(req.params.id);
+    //Validação acesso
+    const customer_id = req.userId;
+    const customerDemandId = demand.customer_id
+    const employee = req.isEmployee;
+
+    if ((customer_id != customerDemandId) && (employee == false)) {
+      return res.status(404).json({ message: "Consulta não autorizada" });
+    }
+
+
+    const {id,status_id} = await Demand.findByPk(req.params.id);
 
     const status = await Status.findOne({
       where: {
