@@ -13,9 +13,9 @@ module.exports = {
         type: Sequelize.DATE,
         allowNull:false,
       },
-      customer_id:{
+      demand_id:{
         type: Sequelize.INTEGER,
-        references: { model:'customers', key: 'id'},
+        references: { model:'demands', key: 'id'},
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
         allowNull: true,
@@ -30,13 +30,6 @@ module.exports = {
       store_id:{
         type: Sequelize.INTEGER,
         references: { model:'stores', key: 'id'},
-        onUpdate: 'CASCADE',
-        onDelete: 'SET NULL',
-        allowNull: true,
-      },
-      employee_id:{
-        type: Sequelize.INTEGER,
-        references: { model: 'employees', key: 'id'},
         onUpdate: 'CASCADE',
         onDelete: 'SET NULL',
         allowNull: true,

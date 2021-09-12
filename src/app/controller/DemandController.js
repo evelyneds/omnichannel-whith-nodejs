@@ -1,4 +1,8 @@
 import Demand from "../models/Demand";
+import Status from "../models/Status";
+import Customer from "../models/Customer";
+import OrderItens from '../models/OrderItens';
+import Product from "../models/Product";
 import {Op} from "sequelize"; 
 
 class DemandController {
@@ -49,9 +53,64 @@ class DemandController {
     }
   }
 
-  async show(req, res) {
+  async updateStatus(req, res) {
+    //Validação funcionário
+    const employee = req.isEmployee;
+    if (employee == false) {
+        return res.status(404).json({ message: "Usuário não autorizado" });
+    };
     const demand = await Demand.findByPk(req.params.id);
-    return res.json({ id });
+    if (!demand) {
+      return response(res, 404, "Pedido não encontrado");
+    } else {
+      demand.status_id = 3
+      await demand.save()
+      return res
+        .status(200)
+        .json({ message: "Status alterado para Retirado" });
+    }
+  }
+
+  async show(req, res) {
+    const demand= await Demand.findByPk(req.params.id);
+
+    const {id,customer_id, status_id}= await Demand.findByPk(req.params.id);
+
+    const status = await Status.findOne({
+      where: {
+        id: status_id ,
+      },
+      attributes: ['status'],
+    });
+
+    const customer = await Customer.findOne({
+      where: {
+        id: customer_id ,
+      },
+      attributes: ['name'],
+    });
+
+    const orderItens = await OrderItens.findAll({
+      where: {
+        demand_id: id ,
+      },
+    });
+
+    var itens = [];
+
+    orderItens.forEach(
+      (orderItens) => {
+        itens.push((orderItens.dataValues.product_id));
+      }
+    )
+    const products = await Product.findAll({
+      where: {
+        id: itens 
+      },
+      attributes: ['description'],
+    });
+    
+    return res.json({id, customer_id, customer, status,demand,products});
   }
 }
 
