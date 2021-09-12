@@ -49,6 +49,24 @@ class DemandController {
     }
   }
 
+  async updateStatus(req, res) {
+    //Validação funcionário
+    const employee = req.isEmployee;
+    if (employee == false) {
+        return res.status(404).json({ message: "Usuário não autorizado" });
+    };
+    const demand = await Demand.findByPk(req.params.id);
+    if (!demand) {
+      return response(res, 404, "Pedido não encontrado");
+    } else {
+      demand.status_id = 3
+      await demand.save()
+      return res
+        .status(200)
+        .json({ message: "Status alterado para Retirado" });
+    }
+  }
+
   async show(req, res) {
     const demand = await Demand.findByPk(req.params.id);
     return res.json({ id });

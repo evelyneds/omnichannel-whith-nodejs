@@ -24,10 +24,7 @@ routes.get('/', (req, res) => {
 //Padronização das Rotas em CRUD_ [create_ read_ update_ delete_]
 
 //Rotas Store
-routes.post('/create_store', StoreController.store);
 routes.get('/read_store', StoreController.index);
-routes.put('/update_store/:id', StoreController.update);
-routes.delete('/delete_store/:id', StoreController.delete);
 routes.get('/show_store/:id', StoreController.show);
 
 //Rotas Employee
@@ -41,10 +38,7 @@ routes.get('/read_customer', CustomerController.index);
 routes.post('/create_session', SessionController.store);
 
 //Rotas Product
-routes.post('/create_product', ProductController.store);
 routes.get('/read_product', ProductController.index);
-routes.put('/update_product/:id', ProductController.update);
-routes.delete('/delete_product/:id', ProductController.delete);
 routes.get('/show_product/:id', ProductController.show);
 
 //Rotas Status
@@ -64,6 +58,14 @@ routes.get('/show_appointment/:id', AppointmentController.show);
 
 routes.use(authMiddleware);
 
+routes.post('/create_store', StoreController.store);
+routes.put('/update_store/:id', StoreController.update);
+routes.delete('/delete_store/:id', StoreController.delete);
+
+routes.post('/create_product', ProductController.store);
+routes.delete('/delete_product/:id', ProductController.delete);
+routes.put('/update_product/:id', ProductController.update);
+
 routes.post('/create_appointment', AppointmentController.store);
 
 //Rotas Order/Demand
@@ -72,6 +74,7 @@ routes.get('/read_demand', DemandController.index);
 //routes.put('/update_demand/:id', DemandController.update);
 routes.delete('/delete_demand/:id', DemandController.delete);
 routes.get('/show_demand/:id', DemandController.show);
+routes.put('/finish_demand/:id', DemandController.updateStatus);
 
 
 //Rotas OrderItens

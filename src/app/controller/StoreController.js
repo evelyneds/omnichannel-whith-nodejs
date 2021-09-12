@@ -2,6 +2,12 @@ import Store from '../models/Store';
 
 class StoreController {
     async store(req, res) {
+        //Validação funcionário
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
+
         const store = await Store.create(req.body);
         if (!store) {
             return res.status(404).json({ message: "Loja não encontrado." });
@@ -21,6 +27,11 @@ class StoreController {
     };
 
     async delete(req, res) {
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
+
         const store = await Store.findByPk(req.params.id);
         if (!store) {
             return res.status(404).json({ message: "Loja não encontrada." });
@@ -32,6 +43,10 @@ class StoreController {
 
 
     async update(req, res) {
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
         const store = await Store.findByPk(req.params.id);
         if (!store) {
             return res.status(404).json({ message: "Loja não encontrada." });

@@ -3,6 +3,11 @@ import {Op} from "sequelize";
 
 class ProductController {
     async store(req, res) {
+        //Validação funcionário
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
         const { id, description, value, quantity } = await Product.create(req.body);
         return res.json({ message: 'Produto cadastrado com sucesso', id, description, value, quantity });
     };
@@ -25,6 +30,11 @@ class ProductController {
     };
 
     async delete(req, res) {
+        //Validação funcionário
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
         const product = await Product.findByPk(req.params.id);
         if (!product) {
             return res.status(404).json({message: "Produto não encontrado." });
@@ -35,6 +45,11 @@ class ProductController {
     };
 
     async update(req, res) {
+        //Validação funcionário
+        const employee = req.isEmployee;
+        if (employee == false) {
+            return res.status(404).json({ message: "Usuário não autorizado" });
+        };
         const product = await Product.findByPk(req.params.id);
         if (!product) {
             return res.status(404).json({message: "Produto não encontrado." });

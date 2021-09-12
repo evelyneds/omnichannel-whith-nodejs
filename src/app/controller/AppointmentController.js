@@ -58,7 +58,7 @@ class AppointsController {
     });
 
     demandUser.status_id = 2
-    demandUser.save()
+    await demandUser.save()
 
     return res.status(200).json(appointment);
 
