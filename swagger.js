@@ -176,7 +176,7 @@ module.exports = {
         tags: [
           'Status',
         ],
-        parameters: [ ],
+        parameters: [],
         summary: 'Lista status disponivel',
         description: '',
         operationId: 'Read',
@@ -201,7 +201,7 @@ module.exports = {
             type: 'object',
             required: [
               'status',
-       
+
             ],
             properties: {
               id: {
@@ -209,10 +209,11 @@ module.exports = {
                 format: 'integer',
               },
               status: { type: 'string' },
-            
+
             },
             xml: { name: 'Status' },
-        }},
+          }
+        },
       },
     },
     '/show_status/{id}': {
@@ -263,13 +264,183 @@ module.exports = {
                 format: 'integer',
               },
               status: { type: 'string' },
-          
+
             },
             xml: { name: 'Status' },
           }
         },
       },
     },
+    '/delete_status/{id}': {
+      delete: {
+        tags: [
+          'Status',
+        ],
+        parameters: [
+          // expected params.
+          {
+            name: "id", // name of the param
+            in: "path", // location of the param
+            schema: {
+              items: { $ref: '#/definitions/DeleteStatus' },
+            },
+            required: true, // Mandatory param
+            description: "A single todo id", // param desc.
+          },
+        ],
+        summary: 'Deletar status especifico',
+        description: '',
+        operationId: 'DeleteStatus',
+        consumes: [
+          'application/json',
+        ],
+        produces: [
+          'application/json',
+        ],
+        responses: {
+          200: {
+            description: 'Status deletado com sucesso!',
+            schema: {
+              type: 'array',
+              items: { $ref: '#/definitions/DeleteStatus' },
+            },
+          },
+          409: { description: 'Erro ao deletar status!' },
+        },
+        definitions: {
+          Product: {
+            type: 'object',
+            required: [
+              'status',
+
+            ],
+            properties: {
+              id: {
+                type: 'integer',
+                format: 'integer',
+              },
+              status: { type: 'string' },
+
+            },
+            xml: { name: 'Status' },
+          }
+        },
+      },
+    },
+    '/show_status/{id}': {
+      get: {
+        tags: [
+          'Status',
+        ],
+        parameters: [
+          // expected params.
+          {
+            name: "id", // name of the param
+            in: "path", // location of the param
+            schema: {
+              items: { $ref: '#/definitions/ReadStatusI' },
+            },
+            required: true, // Mandatory param
+            description: "A single todo id", // param desc.
+          },
+        ],
+        summary: 'Lista status especifico',
+        description: '',
+        operationId: 'ReadI',
+        consumes: [
+          'application/json',
+        ],
+        produces: [
+          'application/json',
+        ],
+        responses: {
+          200: {
+            description: 'Listagem de status realizada com sucesso!',
+            schema: {
+              type: 'array',
+              items: { $ref: '#/definitions/ReadStatusI' },
+            },
+          },
+          409: { description: 'Erro ao listar status!' },
+        },
+        definitions: {
+          Product: {
+            type: 'object',
+            required: [
+              'status',
+
+            ],
+            properties: {
+              id: {
+                type: 'integer',
+                format: 'integer',
+              },
+              status: { type: 'string' },
+
+            },
+            xml: { name: 'Status' },
+          }
+        },
+      },
+    },
+    '/update_status/{id}': {
+      put: {
+        tags: [
+          'Status',
+        ],
+        parameters: [
+          // expected params.
+          {
+            name: "id", // name of the param
+            in: "path", // location of the param
+            schema: {
+              items: { $ref: '#/definitions/UpdateStatus' },
+            },
+            required: true, // Mandatory param
+            description: "A single todo id", // param desc.
+          },
+        ],
+        summary: 'Lista status especifico',
+        description: '',
+        operationId: 'UpdateStatus',
+        consumes: [
+          'application/json',
+        ],
+        produces: [
+          'application/json',
+        ],
+        responses: {
+          200: {
+            description: 'Listagem de status realizada com sucesso!',
+            schema: {
+              type: 'array',
+              items: { $ref: '#/definitions/UpdateStatus' },
+            },
+          },
+          409: { description: 'Erro ao listar status!' },
+        },
+        definitions: {
+          Product: {
+            type: 'object',
+            required: [
+              'status',
+
+            ],
+            properties: {
+              id: {
+                type: 'integer',
+                format: 'integer',
+              },
+              status: { type: 'string' },
+
+
+            },
+            xml: { name: 'Status' },
+          }
+        },
+      },
+    },
+
     //Product
     '/create_product': {
       post: {
@@ -551,9 +722,68 @@ module.exports = {
       },
     },
 
+    //Demand
+  '/create_demand': {
+    post: {
+      tags: [
+        'Demand',
+      ],
+      parameters: [
+        {
+          in: 'body',//body
+          name: 'body',
+          description: 'Cadastro de pedido ...',
+          required: true,
+          schema: { $ref: '#/definitions/CreateDemand' },
+        },
+      ],
+      summary: 'Cadastra um Pedido na base',
+      description: '',
+      operationId: 'add',
+      consumes: [
+        'application/json',
+      ],
+      produces: [
+        'application/json',
+      ],
+      responses: {
+        200: {
+          description: 'Pedido cadastrado com sucesso!',
+          schema: {
+            type: 'array',
+            items: { $ref: '#/definitions/CreateDemand' },
+          },
+        },
+        409: { description: 'Erro ao cadastrar pedido!' },
+      },
+    },
+    definitions: {
+      Product: {
+        type: 'object',
+        required: [
+          'customer_id',
+          'status_id',
+        
+        ],
+        properties: {
+          id: {
+            type: 'integer',
+            format: 'integer',
+          },
+          customer_id: { type: 'integer' },
+          status_id: { type: 'integer' },
+         
+        },
+        xml: { name: 'Demand' },
+      }
+    },
   },
 
-  //Status
+    //fim do path
+  },
+
+  
+
 
   // Order
 
@@ -666,7 +896,7 @@ module.exports = {
       ],
       properties: {
         status: { type: 'string' },//{ type: 'string' }
-   
+
       },
       json: { description: 'Status' },
     },
@@ -674,15 +904,65 @@ module.exports = {
       type: 'object',
       required: [
         'status',
-   
+
       ],
       properties: {
-       status: { type: 'string' },//{ type: 'string' }
+        status: { type: 'string' },//{ type: 'string' }
 
       },
       json: { description: 'Status' },
     },
+    DeleteStatus: {
+      type: 'object',
+      required: [
+        'status',
+      ],
+      properties: {
+        status: { type: 'string' },//{ type: 'string' }
+
+      },
+      json: { description: 'Status' },
+    },
+    ReadStatusI: {
+      type: 'object',
+      required: [
+        'status',
+
+      ],
+      properties: {
+        status: { type: 'string' },//{ type: 'string' }
+
+      },
+      json: { description: 'Status' },
+    },
+    UpdateStatus: {
+      type: 'object',
+      required: [
+        'status',
+
+      ],
+      properties: {
+        status: { type: 'string' },//{ type: 'string' }
+
+        json: { description: 'Status' },
+      }
+    },
+    CreateDemand: {
+      type: 'object',
+      required: [
+        'customer_id',
+        'status_id',
+       
+      ],
+      properties: {
+        customer_id: { type: 'integer' },//{ type: 'string' }
+        status_id: { type: 'integer' },
+  
+      },
+      json: { description: 'Demand' },
+    },
   },
+
 
   //
   externalDocs: {
