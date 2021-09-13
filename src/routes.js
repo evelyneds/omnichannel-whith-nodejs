@@ -54,7 +54,7 @@ routes.put('/update_status/:id', StatusController.update);
 routes.delete('/delete_status/:id', StatusController.delete);
 routes.get('/show_status/:id', StatusController.show);
 
-routes.use(authMiddleware);
+//routes.use(authMiddleware);
 
 routes.post('/create_store', StoreController.store);
 routes.put('/update_store/:id', StoreController.update);
