@@ -14,8 +14,11 @@ import DemandController from './app/controller/DemandController';
 
 import authMiddleware from './app/middlewares/auth';
 
-const routes = new Router();
+import swaggerUI from 'swagger-ui-express';
+import swaggerDocument from '../swagger';
 
+const routes = new Router();
+routes.use('/swagger',swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 //Teste
 routes.get('/', (req, res) => {
   res.json({ message: "Teste de Rotas OK." })
