@@ -69,7 +69,7 @@ class OrderItensController {
         const orderitens = await OrderItens.findAll({
             attributes: ['id']
         });
-        return res.status(200).json(id);
+        return res.status(200).json(orderitens);
     };
 
     async delete(req, res) {      
