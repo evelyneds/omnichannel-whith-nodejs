@@ -11,7 +11,6 @@ module.exports = {
     host: "localhost:3333",
     basePath: "/",
     schemes: ['http', 'https'],
-    
   }],
   //http://localhost:3333/swagger/
 
@@ -173,126 +172,6 @@ module.exports = {
             password: { type: 'Integer' },
           },
           xml: { name: 'Customer' },
-        }
-      },
-    },
-
-    '/read_customer': {
-      get: {
-        tags: [
-          'Customer',
-        ],
-        parameters: [],
-        summary: 'Lista Clientes cadastrados',
-        description: '',
-        operationId: 'Read',
-        consumes: [
-          'application/json',
-        ],
-        produces: [
-          'application/json',
-        ],
-        responses: {
-          200: {
-            description: 'Listagem de clientes realizada com sucesso!',
-            schema: {
-              type: 'array',
-              items: { $ref: '#/definitions/ReadCustomer' },
-            },
-          },
-          409: { description: 'Erro ao listar cliente!' },
-        },
-        definitions: {
-          Product: {
-            type: 'object',
-            required: [
-              'name',
-              'email',
-              'password',
-            ],
-            properties: {
-              id: {
-                type: 'integer',
-                format: 'integer',
-              },
-              name: { type: 'string' },
-              email: { type: 'string' },
-              password: { type: 'string' },
-            },
-            xml: { name: 'Customer' },
-          }
-        },
-      },
-    },
-
-    //sessacao
-    '/create_session': {
-      post: {
-        "security": [
-          {
-             "bearerAuth": []
-          }
-       ],
-        tags: [
-          'Session',
-        ],
-        "components": {        
-          "securitySchemes": {
-            "bearerAuth": {
-              "type": "http",
-              "scheme": "bearer",
-              "bearerFormat": "JWT"
-            }
-          }
-        
-      },
-        parameters: [
-          {
-            in: 'body',//body
-            name: 'body',
-            description: 'Cadastro de status ...',
-            required: true,
-            schema: { $ref: '#/definitions/CreateSession' },
-          },
-        ],
-        summary: 'Cadastra um status na base',
-        description: '',
-        operationId: 'add',
-        consumes: [
-          'application/json',
-        ],
-        produces: [
-          'application/json',
-        ],
-        responses: {
-          200: {
-            description: 'Status cadastrado com sucesso!',
-            schema: {
-              type: 'array',
-              items: { $ref: '#/definitions/CreateSession' },
-            },
-          },
-          409: { description: 'Erro ao cadastrar status!' },
-        },
-      },
-      definitions: {
-        Product: {
-          type: 'object',
-          required: [
-            'name',
-            'email',
-            'password',
-          ],
-          properties: {
-            id: {
-              type: 'integer',
-              format: 'integer',
-            },
-            name: { type: 'string' },
-            email:{ type: 'string' },
-            password:{ type: 'string' },
-          },
-          xml: { name: 'Session' },
         }
       },
     },
@@ -942,7 +821,7 @@ module.exports = {
         type: 'object',
         required: [
           'customer_id',
-        
+          'status_id',
         
         ],
         properties: {
@@ -951,7 +830,7 @@ module.exports = {
             format: 'integer',
           },
           customer_id: { type: 'integer' },
-          
+          status_id: { type: 'integer' },
          
         },
         xml: { name: 'Demand' },
@@ -1061,7 +940,7 @@ module.exports = {
     },
   },
 
-  '/show_demand/{id}': { 
+  '/show_order/{id}': { 
     get: {
       tags: [
         'Demand',
@@ -1293,12 +1172,12 @@ module.exports = {
       type: 'object',
       required: [
         'customer_id',
-        
+        'status_id',
        
       ],
       properties: {
         customer_id: { type: 'integer' },//{ type: 'string' }
-        
+        status_id: { type: 'integer' },
   
       },
       json: { description: 'Demand' },
@@ -1349,29 +1228,11 @@ module.exports = {
       ],
       properties: {
         name: { type: 'string' },//{ type: 'string' }
-        email: { type: 'string' },
-        password: { type: 'string' },
+        email: { type: 'double' },
+        password: { type: 'integer' },
       },
-      json: { description: 'Customer' },
+      json: { description: 'Product' },
     },
-    CreateSession: {
-      type: 'object',
-      required: [
-        'name',
-        'email',
-        'password',
-      ],
-      properties: {
-        name: { type: 'string' },//{ type: 'string' }
-        email: { type: 'string' },
-        password: { type: 'string' },
-        
-  
-      },
-      json: { description: 'Session' },
-    },
-
-
 
 
     //fim modelo
