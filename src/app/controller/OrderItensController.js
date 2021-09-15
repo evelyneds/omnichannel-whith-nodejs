@@ -33,7 +33,6 @@ class OrderItensController {
         if (produto.quantity < 1) {
             return res.status(404).json({ message: 'Produto indisponível' });
         }
-        console.log(produto.quantity)
 
         const demand_id = demandUser.id;
 

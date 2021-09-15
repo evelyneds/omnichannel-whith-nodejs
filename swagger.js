@@ -507,7 +507,7 @@ module.exports = {
           'Status',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -562,7 +562,7 @@ module.exports = {
           'Status',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -618,7 +618,7 @@ module.exports = {
           'Status',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -674,7 +674,7 @@ module.exports = {
           'Status',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -842,7 +842,7 @@ module.exports = {
           'Product',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -901,7 +901,7 @@ module.exports = {
           'Product',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -959,7 +959,7 @@ module.exports = {
           'Product',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -1125,7 +1125,7 @@ module.exports = {
           'Demand',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -1186,7 +1186,7 @@ module.exports = {
           'Demand',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -1236,7 +1236,7 @@ module.exports = {
           'Demand',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 
@@ -1420,7 +1420,7 @@ module.exports = {
           'Order-Itens',
         ],
         parameters: [
-          // expected params.
+          
           {
             name: "id", 
             in: "path", 

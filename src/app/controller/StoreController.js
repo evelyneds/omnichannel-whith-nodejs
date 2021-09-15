@@ -56,14 +56,14 @@ class StoreController {
         }
     };
 
-    
+
     async show(req, res) {
         const store = await Store.findByPk(req.params.id);
         if (!store) {
-            return res.status(404).json({message: "Loja não encontrada." });
-          }else{
+            return res.status(404).json({ message: "Loja não encontrada." });
+        } else {
             return res.status(200).json({ store, message: 'Loja exibido com sucesso' });
-          }
+        }
     };
 }
 

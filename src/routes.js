@@ -1,4 +1,3 @@
-
 import { Router } from 'express';
 
 import EmployeeController from './app/controller/EmployeeController';
@@ -18,7 +17,7 @@ import swaggerUI from 'swagger-ui-express';
 import swaggerDocument from '../swagger';
 
 const routes = new Router();
-routes.use('/swagger',swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+routes.use('/swagger', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 //Teste
 routes.get('/', (req, res) => {
   res.json({ message: "Teste de Rotas OK." })

@@ -1,6 +1,5 @@
 import Status from '../models/Status';
 
-
 class StatusController {
     async store(req, res) {
         const status = await Status.create(req.body);
@@ -47,10 +46,10 @@ class StatusController {
     async show(req, res) {
         const status = await Status.findByPk(req.params.id);
         if (!status) {
-            return res.status(404).json({message: "Status não encontrado." });
-          }else{
+            return res.status(404).json({ message: "Status não encontrado." });
+        } else {
             return res.status(200).json({ status, message: 'Status exibido com sucesso' });
-          }
+        }
     };
 }
 

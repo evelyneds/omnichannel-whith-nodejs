@@ -11,7 +11,6 @@ class AppointsController {
     return res.status(200).json({ message: "Teste de Acesso" });
   }
   async store(req, res) {
-    console.log(req.userId);
     const { store_id, date } = req.body;
     let demandUser = await Demand.findOne({
       where: {
@@ -21,7 +20,6 @@ class AppointsController {
     });
 
     let demand_id = demandUser.id;
-    console.log(demand_id);
 
     const schema = Yup.object().shape({
       store_id: Yup.number().required(),
@@ -83,12 +81,12 @@ class AppointsController {
         .status(404)
         .json({ message: "Nenhum agendamento encontrado." });
     } else {
-        await appointment.update(req.body);
-        console.log('Date de function ' + Date())
-        return res
-          .status(200)
-          .json({ message: "Agendamento atualizado com sucesso.", appointment });
-      }
+      await appointment.update(req.body);
+      console.log('Date de function ' + Date())
+      return res
+        .status(200)
+        .json({ message: "Agendamento atualizado com sucesso.", appointment });
+    }
   }
 }
 
