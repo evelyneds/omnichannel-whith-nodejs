@@ -140,14 +140,13 @@ npm i
 ```
 
 ### 3º Passo - Criando database
-No seu banco de dados escolhido nas configurações do passo acima, crie um database. </br>
 Esse projeto foi criado utilizando ORM Sequelize/ Dialeto Postgres, utilizando o ElephantSQL.
 Sugerimos que crie uma conexão em
 <code> https://customer.elephantsql.com/login</code>
 
 ### 4º Passo - Configurar o ambiente
-As configurações do banco estão armazenadas em config > database.js
-Recomendamos alterar as informações desse arquivo para as informações correspondentes ao seu banco de dados
+Para configurar o ambiente é necessário duplicar o arquivo `.env.local` e renomea-lo somente para `.env`.</br>
+Em seguida, altere as informações desse arquivo `.env` para as informações correspondentes a conexão do seu banco de dados
 
 ### 5º Passo - Criando as migrations do banco de dados
 Para criar as migrations do banco de dados e já ter uma estrutra de relacionamento predefinidos, digite o seguinte comando no terminal:
@@ -180,9 +179,39 @@ O usuário tem acesso aos seguintes endpoints:
 
 
 Cliente Endpoint.
-[Colocar imagens dos endpoints...]
 
-🚧 Em construção
+- AUTENTICAÇÃO
+
+<img src="https://raw.githubusercontent.com/evelynsantos/omnigirls/master/tmp/uploads/0AUTENTICACAO.gif" width="500px">
+
+
+</br></br>
+																 
+- ADICIONAR PRODUTO
+
+<img src="https://raw.githubusercontent.com/evelynsantos/omnigirls/master/tmp/uploads/1adicionar-prodduto-_2_.gif" width="500px">
+
+</br></br>
+
+- REMOVER ITEM DO CARRINHO
+
+<img src="https://github.com/evelynsantos/omnigirls/blob/master/tmp/uploads/2remove-item-do-carrinho-_2_.gif" width="500px">
+
+</br></br>
+																		   
+- CONSULTAR TODOS OS PRODUTOS
+
+<img src="https://raw.githubusercontent.com/evelynsantos/omnigirls/master/tmp/uploads/3.listar-todos-os-produtos.gif" width="500px">
+
+</br></br>
+
+- CONSULTAR TODAS AS COMPRAS COM SWAGGER
+
+<img src="https://raw.githubusercontent.com/evelynsantos/omnigirls/master/tmp/uploads/4-Consultar-todas-as-compras-realizadas-da-cliente-.gif" width="500px">
+
+
+Crédito dos .gifs a Ana Carvalho! Ficaram bem legais!
+
 
 
 <div id='contribuicao'/>
