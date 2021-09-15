@@ -132,7 +132,7 @@ module.exports = {
         ],
         parameters: [
           {
-            in: 'body',//body
+            in: 'body',
             name: 'body',
             description: 'Cadastro de cliente ...',
             required: true,
@@ -240,7 +240,7 @@ module.exports = {
         ],
         parameters: [
           {
-            in: 'body',//body
+            in: 'body',
             name: 'body',
             description: 'Cadastro de cliente ...',
             required: true,
@@ -356,7 +356,7 @@ module.exports = {
         },
         parameters: [
           {
-            in: 'body',//body
+            in: 'body',
             name: 'body',
             description: 'Cadastro de status ...',
             required: true,
@@ -412,7 +412,7 @@ module.exports = {
         ],
         parameters: [
           {
-            in: 'body',//body
+            in: 'body',
             name: 'body',
             description: 'Cadastro de status ...',
             required: true,
@@ -509,13 +509,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/ReadStatusI' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Lista produtos especifico',
@@ -564,13 +564,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/DeleteStatus' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Deletar status especifico',
@@ -620,13 +620,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/ReadStatusI' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Lista status especifico',
@@ -676,13 +676,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/UpdateStatus' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Lista status especifico',
@@ -734,7 +734,7 @@ module.exports = {
         ],
         parameters: [
           {
-            in: 'body',//body
+            in: 'body',
             name: 'body',
             description: 'Cadastro de produto ...',
             required: true,
@@ -844,13 +844,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/ReadProductI' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Lista produtos especifico',
@@ -903,13 +903,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/UpdateProduct' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Lista produtos especifico',
@@ -961,13 +961,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/DeleteProduct' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Deletar produto especifico',
@@ -1020,7 +1020,7 @@ module.exports = {
         ],
         parameters: [
           {
-            in: 'body',//body
+            in: 'body',
             name: 'body',
             description: 'Cadastro de pedido ...',
             required: true,
@@ -1127,13 +1127,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/DeleteDemand' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Deletar pedido especifico',
@@ -1188,13 +1188,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/UpdateDemand' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Finalizar compra',
@@ -1238,13 +1238,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/ShowDemandI' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Lista pedido especifico',
@@ -1302,7 +1302,7 @@ module.exports = {
         ],
         parameters: [
           {
-            in: 'body',//body
+            in: 'body',
             name: 'body',
             description: 'Adiciona produto no carrinho',
             required: true,
@@ -1364,7 +1364,7 @@ module.exports = {
         ],
         parameters: [
           {
-            in: 'body',//body
+            in: 'body',
             name: 'body',
             description: 'Deleta um produto do carrinho',
             required: true,
@@ -1422,13 +1422,13 @@ module.exports = {
         parameters: [
           // expected params.
           {
-            name: "id", // name of the param
-            in: "path", // location of the param
+            name: "id", 
+            in: "path", 
             schema: {
               items: { $ref: '#/definitions/OrderItensI' },
             },
-            required: true, // Mandatory param
-            description: "A single todo id", // param desc.
+            required: true, 
+            description: "A single todo id",
           },
         ],
         summary: 'Lista produtos',
@@ -1533,13 +1533,8 @@ module.exports = {
     //fim do path
   },
 
-
-
-
   // Order
-
   // Cart
-
   // OrderItens
 
 
@@ -1554,7 +1549,7 @@ module.exports = {
         'quantity',
       ],
       properties: {
-        description: { type: 'string' },//{ type: 'string' }
+        description: { type: 'string' },
         value: { type: 'double' },
         quantity: { type: 'integer' },
       },
@@ -1568,7 +1563,7 @@ module.exports = {
         'quantity',
       ],
       properties: {
-        description: { type: 'string' },//{ type: 'string' }
+        description: { type: 'string' },
         value: { type: 'double' },
         quantity: { type: 'integer' },
       },
@@ -1582,7 +1577,7 @@ module.exports = {
         'quantity',
       ],
       properties: {
-        description: { type: 'string' },//{ type: 'string' }
+        description: { type: 'string' },
         value: { type: 'double' },
         quantity: { type: 'integer' },
       },
@@ -1596,7 +1591,7 @@ module.exports = {
         'quantity',
       ],
       properties: {
-        description: { type: 'string' },//{ type: 'string' }
+        description: { type: 'string' },
         value: { type: 'double' },
         quantity: { type: 'integer' },
       },
@@ -1611,7 +1606,7 @@ module.exports = {
         'adress'
       ],
       properties: {
-        company_name: { type: 'string' },//{ type: 'string' }
+        company_name: { type: 'string' },
         adress: { type: 'string' },
 
       },
@@ -1624,7 +1619,7 @@ module.exports = {
         'adress'
       ],
       properties: {
-        company_name: { type: 'string' },//{ type: 'string' }
+        company_name: { type: 'string' },
         adress: { type: 'string' },
       },
       json: { description: 'Store' },
@@ -1636,7 +1631,7 @@ module.exports = {
         'status',
       ],
       properties: {
-        status: { type: 'string' },//{ type: 'string' } 
+        status: { type: 'string' }, 
       },
       json: { description: 'Status' },
     },
@@ -1646,7 +1641,7 @@ module.exports = {
         'status',
       ],
       properties: {
-        status: { type: 'string' },//{ type: 'string' }
+        status: { type: 'string' },
 
       },
       json: { description: 'Status' },
@@ -1658,7 +1653,7 @@ module.exports = {
 
       ],
       properties: {
-        status: { type: 'string' },//{ type: 'string' }
+        status: { type: 'string' },
 
       },
       json: { description: 'Status' },
@@ -1669,7 +1664,7 @@ module.exports = {
         'status',
       ],
       properties: {
-        status: { type: 'string' },//{ type: 'string' }
+        status: { type: 'string' },
 
       },
       json: { description: 'Status' },
@@ -1681,7 +1676,7 @@ module.exports = {
 
       ],
       properties: {
-        status: { type: 'string' },//{ type: 'string' }
+        status: { type: 'string' },
 
       },
       json: { description: 'Status' },
@@ -1693,7 +1688,7 @@ module.exports = {
 
       ],
       properties: {
-        status: { type: 'string' },//{ type: 'string' }
+        status: { type: 'string' },
 
         json: { description: 'Status' },
       }
@@ -1705,7 +1700,7 @@ module.exports = {
         'status_id',
       ],
       properties: {
-        customer_id: { type: 'integer' },//{ type: 'string' }
+        customer_id: { type: 'integer' },
         status_id: { type: 'integer' },
       },
       json: { description: 'Demand' },
@@ -1717,7 +1712,7 @@ module.exports = {
         'status_id',
       ],
       properties: {
-        customer_id: { type: 'integer' },//{ type: 'string' }
+        customer_id: { type: 'integer' },
         status_id: { type: 'integer' },
       },
       json: { description: 'Demand' },
@@ -1730,7 +1725,7 @@ module.exports = {
       ],
       properties: {
         customer_id: { type: 'integer' },
-        status_id: { type: 'integer' },//{ type: 'string' }
+        status_id: { type: 'integer' },
 
       },
       json: { description: 'Demand' },
@@ -1750,7 +1745,7 @@ module.exports = {
         'status_id',
       ],
       properties: {
-        customer_id: { type: 'integer' },//{ type: 'string' }
+        customer_id: { type: 'integer' },
         status_id: { type: 'integer' },
       },
       json: { description: 'Demand' },
@@ -1763,7 +1758,7 @@ module.exports = {
         'password',
       ],
       properties: {
-        name: { type: 'string' },//{ type: 'string' }
+        name: { type: 'string' },
         email: { type: 'string' },
         password: { type: 'string' },
       },
@@ -1789,7 +1784,7 @@ module.exports = {
         'product_id',
       ],
       properties: {
-        product_id: { type: 'interger' },//{ type: 'string' }
+        product_id: { type: 'interger' },
       },
       json: { description: 'OrderItens' },
     },
@@ -1847,7 +1842,7 @@ module.exports = {
         'password',
       ],
       properties: {
-        name: { type: 'string' },//{ type: 'string' }
+        name: { type: 'string' },
         email: { type: 'string' },
         password: { type: 'string' },
         json: { description: 'Customer' },
@@ -1860,7 +1855,7 @@ module.exports = {
           'password',
         ],
         properties: {
-          name: { type: 'string' },//{ type: 'string' }
+          name: { type: 'string' },
           email: { type: 'string' },
           password: { type: 'string' },
 
@@ -1871,13 +1866,9 @@ module.exports = {
       //fim modelo
     },
 
-
-    //
     externalDocs: {
       description: 'Acesse o repositorio',
-      url: 'http://github.com',
+      url: 'https://github.com/evelynsantos/omnigirls',
     },
-
-
   }
 }

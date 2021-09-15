@@ -1,13 +1,10 @@
 import * as Yup from "yup";
 import { startOfHour, parseISO, isBefore, format } from "date-fns";
-import pt from "date-fns/locale/pt-BR";
 import Store from "../models/Store";
-import Customer from "../models/Customer";
 import Appointment from "../models/Appointment";
 import Demand from "../models/Demand";
 import OrderItens from "../models/OrderItens";
 import Product from "../models/Product";
-//import Notifications from '../schema/Notifications';
 
 class AppointsController {
   async index(req, res) {
@@ -16,7 +13,6 @@ class AppointsController {
   async store(req, res) {
     console.log(req.userId);
     const { store_id, date } = req.body;
-    // console.log(demand_id)
     let demandUser = await Demand.findOne({
       where: {
         status_id: 1,
@@ -74,7 +70,6 @@ class AppointsController {
     const product = cart.map((item) => {
       return item.product_id;
     });
-    //console.log(JSON.stringify(product)); //product é um array
     await Product.decrement("quantity", { where: { id: product } });
 
     return res.status(200).json(appointment);

@@ -10,11 +10,7 @@ export default async (req, res, next) => {
     return res.status(401).json({ message: 'Usuário não logado'})
   }
 
-  //console.log(authHeaders);
-  //next();
-
   const [ , token ] = authHeaders.split(' ');
-  //console.log(authHeaders);
 
   try {
     const decoded = await promisify(jwt.verify)(token, authConfig.secret);

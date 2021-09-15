@@ -6,7 +6,6 @@ import Product from '../models/Product';
 class OrderItensController {
     async store(req, res) {
         const { quantity, product_id } = req.body;
-        // console.log(demand_id)
         let demandUser = await Demand.findOne({
             where: {
                 status_id: 1,
@@ -26,7 +25,7 @@ class OrderItensController {
                 id: product_id,
             },
           });
-        //const produto = Product.product_id
+
         if (!produto) {
             return res.status(404).json({ message: 'O produto não existe' });
         }
@@ -37,7 +36,6 @@ class OrderItensController {
         console.log(produto.quantity)
 
         const demand_id = demandUser.id;
-        //console.log(demand_id);
 
         let itens = await OrderItens.findOne({
             where: { demand_id, product_id }
@@ -45,7 +43,6 @@ class OrderItensController {
         try {
             if (quantity === 1) {
                 if (!itens) {
-                    //throw 'Teste'
                     const orderItens = await OrderItens.create({
                         demand_id,
                         product_id,
@@ -60,7 +57,6 @@ class OrderItensController {
             }
             next();
         } catch (err) {
-            //TODO - Incluir um IF e produto não encontrado 404
             return res.status(404).json({ message: 'A quantidade de itens está limitada a 1 unidade [itens informados:' + quantity + ']' });
         }
     };
@@ -80,7 +76,6 @@ class OrderItensController {
             },
         })
         const demand_id = demandUser.id;
-        console.log(demand_id);//Fim todo
 
         const orderitens = await OrderItens.findOne({
             where: {
