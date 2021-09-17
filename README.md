@@ -248,7 +248,7 @@ Crédito dos .gifs a Ana Carvalho! Ficaram bem legais!
                 </a><br><br>
                 <b>Ana Maria Carvalho</b><br>
                 <a href="https://github.com/carvalhoanamaria">
-                    <img src="https://ssoucie.github.io/images/giticon2.png" width="27px">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="27px">
                 </a>
                 <a href="https://www.linkedin.com/in/carvalhoanamaria/">
                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" width="27px">
@@ -261,7 +261,7 @@ Crédito dos .gifs a Ana Carvalho! Ficaram bem legais!
                 </a><br><br>
                 <b>Evelyn Dias Santos</b><br>
                 <a href="https://github.com/evelynsantos">
-                    <img src="https://ssoucie.github.io/images/giticon2.png" width="27px">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="27px">
                 </a>
                 <a href="https://www.linkedin.com/in/evelyneds">
                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" width="27px">
@@ -274,7 +274,7 @@ Crédito dos .gifs a Ana Carvalho! Ficaram bem legais!
                 </a><br><br>
                 <b>Keila Hadama</b><br>
                 <a href="https://github.com/hadamakei">
-                    <img src="https://ssoucie.github.io/images/giticon2.png" width="27px">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="27px">
                 </a>
                 <a href="https://www.linkedin.com/in/keila-hadama-45a903193">
                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" width="27px">
@@ -287,7 +287,7 @@ Crédito dos .gifs a Ana Carvalho! Ficaram bem legais!
                 </a><br><br>
                 <b>Julia Minagawa</b><br>
                 <a href="https://github.com/JuliaMinagawa">
-                    <img src="https://ssoucie.github.io/images/giticon2.png" width="27px">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="27px">
                 </a>
                 <a href="https://www.linkedin.com/in/juliaminagawa/">
                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" width="27px">
@@ -300,7 +300,7 @@ Crédito dos .gifs a Ana Carvalho! Ficaram bem legais!
                 </a><br><br>
                 <b>Pietra Santos</b><br>
                 <a href="https://github.com/Pietra-Santos">
-                    <img src="https://ssoucie.github.io/images/giticon2.png" width="27px">
+                    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg" width="27px">
                 </a>
                 <a href="https://www.linkedin.com/in/pietra-santos1/">
                     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linkedin/linkedin-original.svg" width="27px">
