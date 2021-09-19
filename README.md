@@ -51,7 +51,7 @@ A proposta desse projeto é desenvolver um software para demonstrar os nossos co
 
 ## Tecnologias utilizadas
 
-- [x] Noje.js
+- [x] Node.js
 - [x] Sequelize - ORM
 - [x] Seeders
 - [x] Postgres
