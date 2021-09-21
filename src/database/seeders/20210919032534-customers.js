@@ -3,22 +3,28 @@
 
 module.exports = {
   up: async (queryInterface) => {
-    return queryInterface.bulkInsert('statuses', [
+    return queryInterface.bulkInsert('customers', [
       {
         //id: 1,
-        status: 'Em andamento',
+        name: 'Ana Maria',
+        email: 'mari@gmail.com',
+        password_hash: '123456789',
         created_at:'2021-09-07 20:37:10.676+00',
         updated_at:'2021-09-07 20:37:10.676+00',
       },
       {
         //id: 2,
-        status: 'Realizado',
+        name: 'Joao Luiz',
+        email: 'jl@gmail.com',
+        password_hash: '123456789',
         created_at:'2021-09-07 20:37:10.676+00',
         updated_at:'2021-09-07 20:37:10.676+00',
       },
       {
         //id: 3,
-        status: 'Retirado',
+        name: 'Helena Lemmon',
+        email: 'hl@gmail.com',
+        password_hash: '123456789',
         created_at:'2021-09-07 20:37:10.676+00',
         updated_at:'2021-09-07 20:37:10.676+00',
       }
@@ -26,11 +32,6 @@ module.exports = {
   },
 
   down: async (queryInterface) => {
-    return queryInterface.bulkDelete('statuses', null, {});
+    return queryInterface.bulkDelete('customers', null, {});
   }
 };
-//Para excluir todas:
-//npx sequelize db:seed:undo:all
-
-//Para rodar todas as Seeders
-//npx sequelize-cli db:seed:all

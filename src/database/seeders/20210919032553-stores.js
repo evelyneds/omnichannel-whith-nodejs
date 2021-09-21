@@ -1,24 +1,23 @@
 'use strict';
 
-
 module.exports = {
-  up: async (queryInterface) => {
-    return queryInterface.bulkInsert('statuses', [
+  up: async (queryInterface, Sequelize) => {
+    return queryInterface.bulkInsert('stores', [
       {
-        //id: 1,
-        status: 'Em andamento',
+        company_name: 'Loja Store 01',
+        address: 'Rua dos patriotas 125',
+        created_at:'2021-09-07 20:37:10.676+00',
+        updated_at:'2021-09-07 20:37:10.676+00',
+      },
+      { 
+        company_name: 'Loja Mega 02',
+        address: 'Rua café com leite 1350',
         created_at:'2021-09-07 20:37:10.676+00',
         updated_at:'2021-09-07 20:37:10.676+00',
       },
       {
-        //id: 2,
-        status: 'Realizado',
-        created_at:'2021-09-07 20:37:10.676+00',
-        updated_at:'2021-09-07 20:37:10.676+00',
-      },
-      {
-        //id: 3,
-        status: 'Retirado',
+        company_name: 'Loja Luiza 03',
+        address: 'Rua java 150',
         created_at:'2021-09-07 20:37:10.676+00',
         updated_at:'2021-09-07 20:37:10.676+00',
       }
@@ -26,11 +25,6 @@ module.exports = {
   },
 
   down: async (queryInterface) => {
-    return queryInterface.bulkDelete('statuses', null, {});
+    return queryInterface.bulkDelete('stores', null, {});
   }
 };
-//Para excluir todas:
-//npx sequelize db:seed:undo:all
-
-//Para rodar todas as Seeders
-//npx sequelize-cli db:seed:all
