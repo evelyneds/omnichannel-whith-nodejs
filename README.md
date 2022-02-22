@@ -61,6 +61,7 @@ A proposta desse projeto é desenvolver um software para demonstrar os nossos co
 - [x] Insomnia
 - [x] API
 - [x] BCrypt
+- [x] oAuth
 - [x] Yup
 - [x] MVC
 
