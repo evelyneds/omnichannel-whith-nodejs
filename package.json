@@ -22,7 +22,7 @@
     "sequelize": "^6.19.1",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.6",
-    "yup": "^0.32.9",
+    "yup": "^0.32.11",
     "yupp": "^0.3.0"
   },
   "devDependencies": {
